@@ -12,7 +12,7 @@ from .types import (
     STRING,
     STRING_ML,
 )
-from .utils import logger
+from .utils import llm_request, logger
 
 class FlowyLLM:
     @classmethod
@@ -44,33 +44,15 @@ Nodes from https://comflowy.com:
         if seed > 0xFFFFFFFF:
             seed = seed & 0xFFFFFFFF
             logger.warning("Seed is too large. Truncating to 32-bit: %d", seed)
-
         try:
-            response = None
-            url = f"{API_HOST}/api/open/v0/llm"
-            response = requests.post(
-                url,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {api_key}",
-                },
-                json={
-                    "prompt": prompt,
-                    "system_prompt": system_prompt,
-                    "model": llm_model,
-                },
-                timeout=timeout,
+            generated_text = llm_request(
+                prompt=prompt, 
+                llm_model=llm_model, 
+                system_prompt=system_prompt, 
+                api_key=api_key, 
+                max_tokens=4000, 
+                timeout=10
             )
-
-            response.raise_for_status()  # Raise an HTTPError for bad responses
-
-            ret = response.json()
-            if ret.get("success"):
-                text = ret.get("text")
-                return {"ui": {"text": [text]}, "result": (text,)}
-            else:
-                return {"ui": {"text": [ret.get("error")]}, "result": (None,)}
-
-        except requests.exceptions.RequestException as e:
-            print("LLM request error:", e)
+            return {"ui": {"text": [generated_text]}, "result": (generated_text,)}
+        except Exception as e:
             return {"ui": {"text": [str(e)]}, "result": (str(e),)}

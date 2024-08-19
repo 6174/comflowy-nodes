@@ -183,6 +183,15 @@ valid_locations = {  # x, y in 90*90
     "on the top-right": (75, 15),
     "on the bottom-left": (15, 75),
     "on the bottom-right": (75, 75),
+    "center": (45, 45),
+    "left": (15, 45),
+    "right": (75, 45),
+    "top": (45, 15),
+    "bottom": (45, 75),
+    "top-left": (15, 15),
+    "top-right": (75, 15),
+    "bottom-left": (15, 75),
+    "bottom-right": (75, 75),
 }
 
 valid_offsets = {  # x, y in 90*90
@@ -195,6 +204,15 @@ valid_offsets = {  # x, y in 90*90
     "slightly to the upper-right": (10, -10),
     "slightly to the lower-left": (-10, 10),
     "slightly to the lower-right": (10, 10),
+    "no": (0, 0),
+    "left": (-10, 0),
+    "right": (10, 0),
+    "upper": (0, -10),
+    "lower": (0, 10),
+    "upper-left": (-10, -10),
+    "upper-right": (10, -10),
+    "lower-left": (-10, 10),
+    "lower-right": (10, 10),
 }
 
 valid_areas = {  # w, h in 90*90

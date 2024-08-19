@@ -17,7 +17,7 @@ def get_nested_value(data, json_path):
 def llm_request(prompt, system_prompt, llm_model, api_key, max_tokens=3000, timeout=10):
     try:
         response = None
-        url = f"{API_HOST}/api/open/v0/llm"
+        url = f"{API_HOST}/api/open/v0/prompt"
         response = requests.post(
             url,
             headers={
@@ -42,5 +42,13 @@ def llm_request(prompt, system_prompt, llm_model, api_key, max_tokens=3000, time
         else:
             raise Exception(f"Error: {ret.get('error')}")
     except Exception as e:
-        logger.warn(e)
-        raise Exception(f"Failed to get response from LLM model with {url}, error: {str(e)}")
+        error_message = str(e)
+        if response is not None and response.status_code == 500:
+            try:
+                error_json = response.json()
+                error_message = error_json.get("error", error_message)
+            except ValueError:
+                pass  # response is not in JSON format
+        print("LLM request error:", error_message)
+        
+        raise Exception(f"Failed to get response from LLM model with {url}, error: {error_message}")

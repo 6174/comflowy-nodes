@@ -24,8 +24,8 @@ system_prompt = r"""You are a helpful AI assistant to compose images using the a
 
 The JSON Schema is defined in typescript as follows:
 ```ts
-type Location = "in the center" | "on the left" | "on the right" | "on the top" | "on the bottom" | "on the top-left" | "on the top-right" | "on the bottom-left" | "on the bottom-right"
-type Offset = "no offset" | "slightly to the left" | "slightly to the right" | "slightly to the upper" | "slightly to the lower" | "slightly to the upper-left" | "slightly to the upper-right" | "slightly to the lower-left" | "slightly to the lower-right"
+type Location = "center" | "left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"
+type Offset = "no" | "left" | "right" | "upper" | "lower" | "upper-left" | "upper-right" | "lower-left" | "lower-right"
 type Area = "a small square area" | "a small vertical area" | "a small horizontal area" | "a medium-sized square area" | "a medium-sized vertical area" | "a medium-sized horizontal area" | "a large square area" | "a large vertical area" | "a large horizontal area"
 type GlobalDescription = {
     description: string,
@@ -66,55 +66,33 @@ Example:
 
 {
   "global_description": {
-    "description": "A fierce battle between warriors and a dragon.",
+    "description": ...,
     "detailed_descriptions": [
-      "In this intense scene, a group of fierce warriors is engaged in an epic battle with a mighty dragon.",
-      "The warriors, clad in armor and wielding swords and shields, are positioned on the left side of the image.",
-      "Their expressions are determined and focused, reflecting their resolve to defeat the dragon.",
-      "The dragon, with its massive wings spread wide and its fiery breath illuminating the scene, dominates the center of the image.",
+        ...
     ],
-    "tags": "battle, warriors, dragon, fierce, armor, swords, shields, determined, focused, epic, intense, metallic, glistening, fiery breath, stormy sky, lightning, debris, conflict",
+    "tags": ...,
     "HTML_web_color_name": "darkslategray"
   },
   "local_descriptions": [
     {
-      "location": "on the left",
-      "offset": "no offset",
-      "area": "a large horizontal area",
+      "location": "left",
+      "offset": "no",
+      "area": "a small square area",
       "distance_to_viewer": 5.0,
-      "description": "A group of fierce warriors.",
+      "description": "...",
       "detailed_descriptions": [
-        "The warriors, clad in gleaming armor, are positioned on the left side of the image.",
-        "They are armed with swords, shields, and spears, ready for battle.",
-        "Their faces are set with determination and focus, reflecting their resolve to defeat the dragon.",
+        ...
       ],
-      "tags": "warriors, armor, swords, shields, spears, determined, focused, mid-action",
-      "atmosphere": "Determined and focused, ready for the fierce battle.",
-      "style": "Highly detailed and dynamic, capturing the intensity of the warriors.",
-      "quality_meta": "High resolution with intricate details and dynamic poses.",
+      "tags": "...",
+      "atmosphere": "...",
+      "style": "...",
+      "quality_meta": "...",
       "HTML_web_color_name": "darkgoldenrod"
     },
-    {
-      "location": "in the center",
-      "offset": "no offset",
-      "area": "a large square area",
-      "distance_to_viewer": 7.0,
-      "description": "A mighty dragon.",
-      "detailed_descriptions": [
-        "The dragon is a massive creature, dominating the center of the image with its wide-spread wings and fiery breath.",
-        "Its scales glisten with a metallic sheen, reflecting the light from its fiery breath.",
-        "The dragon's eyes burn with a fierce intensity, and its teeth are sharp and menacing.",
-      ],
-      "tags": "dragon, massive, wings, fiery breath, glistening scales, metallic sheen, fierce eyes, sharp teeth, powerful wings, shadows, battlefield",
-      "atmosphere": "Intense and menacing, with a powerful presence.",
-      "style": "Epic and dramatic, emphasizing the grandeur and danger of the dragon.",
-      "quality_meta": "High resolution with dramatic lighting and detailed textures.",
-      "HTML_web_color_name": "firebrick"
-    }
+    ...
   ]
 }
 """
-
 
 # 运行 LLM 生成区域描述
 class OmostLLMNode:
