@@ -28,7 +28,7 @@ class FlowyHttpRequest:
     RETURN_TYPES = ("JSON",)
     FUNCTION = "send_http_request"
     OUTPUT_NODE = True
-    CATEGORY = "comflowy"
+    CATEGORY = "Comflowy"
     DESCRIPTION = """
 Nodes from https://comflowy.com: 
 - Description: Send an HTTP request to a URL.
