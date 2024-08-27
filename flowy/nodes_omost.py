@@ -15,7 +15,7 @@ from .lib_omost.greedy_encode import (
     SPECIAL_TOKENS,
 )
 
-CATEGORY = "Comflowy/omost"
+CATEGORY = "Comflowy/Omost"
 from .utils import llm_request, logger
 from .types import LLM_MODELS, STRING
 CANVAS_SIZE = 90
