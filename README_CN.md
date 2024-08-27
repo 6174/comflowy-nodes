@@ -27,12 +27,12 @@ git clone https://github.com/chflame163/ComfyUI_LayerStyle.git
 ### Step 2: 获取 Comflowy API Key
 
 接着你需要获取 Comflowy 的 API Key，点击左下角的头像（图①），再点击设置（图②）， 最后找到 API Key（图③） 并复制它。
-![image](image/API_Key.png)
+![image](images/API_Key.png)
 
 ### Step 3: 配置 Comflowy 插件
 
 最后需要将 API Key 输入到节点里，比如 LLM 节点里就有一个 API Key 的输入框，你需要将刚才复制的 API Key 粘贴到这里：
-![image](image/API_Key_Node.png)
+![image](images/API_Key_Node.png)
 
 > [!NOTE]
 > 需要注意，使用 Comflowy 插件有可能会出现因为网络问题，而导致无法正常使用的情况。如果遇到类似 `Failed to get response from LLM model with https://app.comflowy.com/api/open/v0/prompt` 的问题，需要你检查一下网络状态。
