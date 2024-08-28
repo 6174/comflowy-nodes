@@ -1,0 +1,597 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 20,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        473,
+        609
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1209,
+        188
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        863,
+        186
+      ],
+      "size": {
+        "0": 338.0391540527344,
+        "1": 571.4179077148438
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 16,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2,
+          "label": "latent_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        222261456855657,
+        "randomize",
+        20,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1451,
+        189
+      ],
+      "size": {
+        "0": 239.60360717773438,
+        "1": 334.3671569824219
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Comflowy_Omost_To_Conditioning",
+      "pos": [
+        400,
+        122
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 126
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "canvas_conds",
+          "type": "OMOST_CANVAS_CONDITIONING",
+          "link": 15,
+          "label": "canvas_conds"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Comflowy_Omost_To_Conditioning"
+      },
+      "widgets_values": [
+        0.2,
+        0.8,
+        "average"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        408,
+        348
+      ],
+      "size": {
+        "0": 425.27801513671875,
+        "1": 180.6060791015625
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark",
+        false
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -127,
+        394
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            5,
+            14
+          ],
+          "slot_index": 1,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8
+          ],
+          "slot_index": 2,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamshaper_8.safetensors"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Comflowy_Omost_Preview",
+      "pos": [
+        -198,
+        148
+      ],
+      "size": {
+        "0": 229.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "canvas_conds",
+          "type": "OMOST_CANVAS_CONDITIONING",
+          "link": 19,
+          "label": "canvas_conds"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "JSON",
+          "type": "JSON",
+          "links": null,
+          "shape": 3,
+          "label": "JSON"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Comflowy_Omost_Preview"
+      }
+    },
+    {
+      "id": 14,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -216,
+        -299
+      ],
+      "size": [
+        328.5512870484456,
+        374.97700441128086
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 13,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "\n\n{\n  \"global_description\": {\n    \"description\": \"An ancient warship, weathered by time, dominates the center of the canvas.\",\n    \"detailed_descriptions\": [\n      \"The hull is covered in barnacles and moss, hinting at its long journey across the seas.\",\n      \"The sails are tattered and faded, yet they still hold a sense of grandeur.\",\n      \"The ship's rigging is intricate, showcasing the craftsmanship of a bygone era.\"\n    ],\n    \"tags\": \"ancient, warship, sea, weathered, barnacles, moss, sails, rigging\",\n    \"HTML_web_color_name\": \"navy\"\n  },\n  \"local_descriptions\": [\n    {\n      \"location\": \"center\",\n      \"offset\": \"no\",\n      \"area\": \"a large square area\",\n      \"distance_to_viewer\": 10.0,\n      \"description\": \"An ancient warship stands prominently, its silhouette against the horizon.\",\n      \"detailed_descriptions\": [\n        \"The warship's silhouette is defined by its towering masts and the curve of its hull.\",\n        \"The ship is adorned with intricate carvings and symbols of ancient cultures.\"\n      ],\n      \"tags\": \"ancient, warship, silhouette, masts, hull, carvings, symbols\",\n      \"atmosphere\": \"nostalgic, mysterious\",\n      \"style\": \"realistic\",\n      \"quality_meta\": \"vivid\",\n      \"HTML_web_color_name\": \"navy\"\n    },\n    {\n      \"location\": \"top-right\",\n      \"offset\": \"upper-right\",\n      \"area\": \"a small square area\",\n      \"distance_to_viewer\": 7.0,\n      \"description\": \"A distant view of the ship's stern, with a flag waving in the breeze.\",\n      \"detailed_descriptions\": [\n        \"The flag is a deep red, symbolizing the bravery of the crew who once sailed this vessel.\"\n      ],\n      \"tags\": \"ship's stern, flag, red, bravery\",\n      \"atmosphere\": \"victorious, nostalgic\",\n      \"style\": \"realistic\",\n      \"quality_meta\": \"vivid\",\n      \"HTML_web_color_name\": \"crimson\"\n    }\n  ]\n}\n"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "PreviewImage",
+      "pos": [
+        138,
+        87
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 16,
+      "type": "Comflowy_Omost_LLM",
+      "pos": [
+        -695,
+        -31
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "canvas_conds",
+          "type": "OMOST_CANVAS_CONDITIONING",
+          "links": [
+            15,
+            19
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "canvas_conds"
+        },
+        {
+          "name": "generated_text",
+          "type": "STRING",
+          "links": [
+            13
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "generated_text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Comflowy_Omost_LLM"
+      },
+      "widgets_values": [
+        "An ancient warship",
+        "THUDM/glm-4-9b-chat",
+        "",
+        673046078093462,
+        "randomize",
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      5,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      16,
+      1,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      4,
+      1,
+      17,
+      1,
+      "CLIP"
+    ],
+    [
+      15,
+      16,
+      0,
+      17,
+      0,
+      "OMOST_CANVAS_CONDITIONING"
+    ],
+    [
+      16,
+      17,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      19,
+      16,
+      0,
+      22,
+      0,
+      "OMOST_CANVAS_CONDITIONING"
+    ],
+    [
+      20,
+      22,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6209213230591554,
+      "offset": [
+        739.9752097484295,
+        420.49411898715607
+      ]
+    }
+  },
+  "version": 0.4
+}
