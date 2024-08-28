@@ -50,7 +50,7 @@
     CompyUI插件目录(例如“CompyUI\custom_nodes\”)中打开cmd窗口，键入以下命令：
 
     ```shell
-    git clone https://github.com/chflame163/ComfyUI_LayerStyle.git
+    git clone git clone https://github.com/6174/comflowy-nodes.git
     ```
 
 - 方法三：下载zip文件
