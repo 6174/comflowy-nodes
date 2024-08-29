@@ -18,6 +18,8 @@ from .lib_omost.greedy_encode import (
 CATEGORY = "Comflowy/Omost"
 from .utils import llm_request, logger
 from .types import LLM_MODELS, STRING
+from .api_key_manager import load_api_key  # Add this import
+
 CANVAS_SIZE = 90
 
 system_prompt = r"""You are a helpful AI assistant to compose images using the a json-based canvas system:
@@ -102,7 +104,6 @@ class OmostLLMNode:
             "required": {
                 "prompt": ("STRING", {"multiline": True}),
                 "llm_model": (LLM_MODELS,),
-                "api_key": STRING,
                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xFFFFFFFFFFFFFFFF}),
             },
         }
@@ -117,11 +118,15 @@ class OmostLLMNode:
     FUNCTION = "run_llm"
     CATEGORY = CATEGORY
 
-    def run_llm(self, prompt: str, llm_model: str, seed: int, api_key: str) -> Tuple[list[OmostCanvasCondition]]:
+    def run_llm(self, prompt: str, llm_model: str, seed: int) -> Tuple[list[OmostCanvasCondition]]:
         """Run LLM to generate area conditioning."""
         if seed > 0xFFFFFFFF:
             seed = seed & 0xFFFFFFFF
             logger.warning("Seed is too large. Truncating to 32-bit: %d", seed)
+
+        api_key = load_api_key()
+        if not api_key:
+            raise ValueError("API Key is not set. Please use the 'Comflowy Set API Key' node to set a global API Key before using this node.")
 
         try:
             generated_text = llm_request(prompt=prompt, llm_model=llm_model, system_prompt=system_prompt, api_key=api_key, max_tokens=4000, timeout=10)

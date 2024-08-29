@@ -47,3 +47,26 @@ def llm_request(prompt, system_prompt, llm_model, api_key, max_tokens=3000, time
             raise Exception(f"Error: {ret.get('error')}")
     except Exception as e:
         raise Exception(f"Failed to get response from LLM model with {API_HOST}/api/open/v0/prompt, error: {str(e)}")
+
+def get_nested_value(obj, path, default=None):
+    """
+    Get a nested value from a dictionary using a dot-separated path.
+    
+    Args:
+        obj (dict): The dictionary to search in.
+        path (str): The dot-separated path to the desired value.
+        default: The value to return if the path is not found.
+    
+    Returns:
+        The value at the specified path, or the default value if not found.
+    """
+    keys = path.split('.')
+    for key in keys:
+        if isinstance(obj, dict):
+            obj = obj.get(key, default)
+        else:
+            return default
+    return obj
+
+# Make sure to export the functions
+__all__ = ['llm_request', 'get_nested_value']
