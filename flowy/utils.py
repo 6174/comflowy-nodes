@@ -1,25 +1,30 @@
 import logging
 import requests
-
 from .types import API_HOST
 
-logger = logging.getLogger("Comflowy")
-
-def get_nested_value(data, json_path):
-    keys = json_path.split(".")
-    for key in keys:
-        if key.isdigit():
-            key = int(key)
-        data = data[key]
-    return data
-
+logger = logging.getLogger(__name__)
 
 def llm_request(prompt, system_prompt, llm_model, api_key, max_tokens=3000, timeout=10):
+    """
+    Send a request to the Comflowy LLM API.
+    
+    Args:
+        prompt (str): The main prompt for the LLM.
+        system_prompt (str): The system prompt for the LLM.
+        llm_model (str): The LLM model to use.
+        api_key (str): The API key for authentication.
+        max_tokens (int, optional): Maximum number of tokens to generate. Defaults to 3000.
+        timeout (int, optional): Timeout for the request in seconds. Defaults to 10.
+    
+    Returns:
+        str: The generated text from the LLM.
+    
+    Raises:
+        Exception: If there's an error in the API request or response.
+    """
     try:
-        response = None
-        url = f"{API_HOST}/api/open/v0/prompt"
         response = requests.post(
-            url,
+            f"{API_HOST}/api/open/v0/prompt",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {api_key}",
@@ -37,18 +42,8 @@ def llm_request(prompt, system_prompt, llm_model, api_key, max_tokens=3000, time
 
         ret = response.json()
         if ret.get("success"):
-            text = ret.get("text")
-            return text
+            return ret.get("text")
         else:
             raise Exception(f"Error: {ret.get('error')}")
     except Exception as e:
-        error_message = str(e)
-        if response is not None and response.status_code == 500:
-            try:
-                error_json = response.json()
-                error_message = error_json.get("error", error_message)
-            except ValueError:
-                pass  # response is not in JSON format
-        print("LLM request error:", error_message)
-        
-        raise Exception(f"Failed to get response from LLM model with {url}, error: {error_message}")
+        raise Exception(f"Failed to get response from LLM model with {API_HOST}/api/open/v0/prompt, error: {str(e)}")

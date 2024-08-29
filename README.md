@@ -61,17 +61,17 @@ So we decided to develop some general-purpose nodes based on our needs to help y
 </details>
 
 <details>
-  <summary>Step 2: Get Comflowy API Key</summary>
+  <summary>Step 2: Obtain Comflowy API Key</summary>
   
-  Next, you need to get the Comflowy API Key. Click on the avatar in the lower left corner (Figure 1), then click on Settings (Figure 2), and finally find the API Key (Figure 3) and copy it.
+  Next, you need to obtain the Comflowy API Key. Click on the avatar in the bottom left corner (Figure ①), then click on Settings (Figure ②), and finally find the API Key (Figure ③) and copy it. **Note: For security reasons in future use, please do not disclose your API Key to others.**
   
   ![image](images/API_Key.png)
 </details>
 
 <details>
-  <summary>Step 3: Configure Comflowy extension</summary>
+  <summary>Step 3: Enter Comflowy API Key</summary>
 
-  Finally, you need to input the API Key into the node. For example, there's an API Key input box in the LLM node where you need to paste the API Key you just copied:
+  Lastly, you need to input the API Key into the Comflowy Set API Key node. After entering it, you can delete this node. Then you can use other Comflowy nodes. If you don't input this node, you won't be able to use Comflowy nodes.
   
   ![image](images/API_Key_Node.png)
 </details>

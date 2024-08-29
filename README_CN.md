@@ -39,7 +39,7 @@
 ## 二、如何使用
 
 > [!NOTE]
-> 需要注意，使用 Comflowy 插件的时候，有可能会出现因为网络问题导致无法正常使用的情况。如果遇到类似 `Failed to get response from LLM model with https://app.comflowy.com/api/open/v0/prompt` 的报错，需要你检查一下网络状态。
+> 需要注意，在使用 Comflowy 插件的时候，有可能会出现因为网络问题导致无法正常使用的情况。如果遇到类似 `Failed to get response from LLM model with https://app.comflowy.com/api/open/v0/prompt` 的报错，请检查一下网络状态。
 
 <details>
   <summary>Step 1: 安装 Comflowy 插件</summary>
@@ -53,24 +53,26 @@
     git clone git clone https://github.com/6174/comflowy-nodes.git
     ```
 
+    然后启动 ComfyUI。
+
 - 方法三：下载zip文件
     
-    或者下载解压zip文件，将得到的文件夹复制到 ```ComfyUI\custom_nodes\``` 目录下。
+    或者下载解压zip文件，将得到的文件夹复制到 ```ComfyUI\custom_nodes\``` 目录下，然后启动 ComfyUI。
 
 </details>
 
 <details>
   <summary>Step 2: 获取 Comflowy API Key</summary>
   
-  接着你需要获取 Comflowy 的 API Key，点击左下角的头像（图①），再点击设置（图②）， 最后找到 API Key（图③） 并复制它。
+  接着你需要获取 Comflowy 的 API Key，点击左下角的头像（图①），再点击设置（图②）， 最后找到 API Key（图③） 并复制它。**注意，为了后续使用的安全性，请不要将你的 API Key 泄露给他人。**
   
   ![image](images/API_Key.png)
 </details>
 
 <details>
-  <summary>Step 3: 配置 Comflowy 插件</summary>
+  <summary>Step 3: 输入 Comflowy API Key</summary>
 
-  最后需要将 API Key 输入到节点里，比如 LLM 节点里就有一个 API Key 的输入框，你需要将刚才复制的 API Key 粘贴到这里：
+  最后需要将 API Key 输入到 Comflowy Set API Key 节点里。输入完后，你可以删除此节点。然后使用 Comflowy 的其他节点。如果你没有输入这个节点，那么你将无法使用 Comflowy 的节点。
   
   ![image](images/API_Key_Node.png)
 </details>
