@@ -19,6 +19,10 @@ from .nodes_omost import (
 from .nodes_json import FlowyPreviewJSON, FlowyExtractJSON, ComflowyLoadJSON
 from .nodes_http import FlowyHttpRequest
 from .nodes_llm import FlowyLLM
+from .nodes_upscale import FlowyUpscale
+from .nodes_flux import ComflowyFlux
+from .nodes_ideogram import FlowyIdeogram
+
 
 API_KEY_FILE = os.path.join(os.path.dirname(__file__), "api_key.json")
 
@@ -65,7 +69,10 @@ NODE_CLASS_MAPPINGS = {
     "Comflowy_Omost_Preview": ComflowyOmostPreviewNode,
     "Comflowy_Omost_Load_Canvas_Python_Code": ComflowyOmostLoadCanvasPythonCodeNode,
     "Comflowy_Omost_Load_Canvas_Conditioning": ComflowyOmostLoadCanvasConditioningNode,
-    "Comflowy_Set_API_Key": ComflowySetAPIKey
+    "Comflowy_Set_API_Key": ComflowySetAPIKey,
+    "Comflowy_Upscale": FlowyUpscale,
+    "Comflowy_Ideogram": FlowyIdeogram,
+    "Comflowy_Flux": ComflowyFlux,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -79,5 +86,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Comflowy_Omost_Preview": "Comflowy Omost Preview",
     "Comflowy_Omost_Load_Canvas_Python_Code": "Comflowy Omost Load Canvas Python Code",
     "Comflowy_Omost_Load_Canvas_Conditioning": "Comflowy Omost Load Canvas Conditioning",
-    "Comflowy_Set_API_Key": "Comflowy Set API Key"
+    "Comflowy_Set_API_Key": "Comflowy Set API Key",
+    "Comflowy_Upscale": "Comflowy Upscale",
+    "Comflowy_Ideogram": "Comflowy Ideogram",
+    "Comflowy_Flux": "Comflowy Flux",
 }

@@ -1,6 +1,7 @@
 import sys
 
-API_HOST = "https://app.comflowy.com"  # "http://127.0.0.1:3000"  #
+# API_HOST = "https://app.comflowy.com" 
+API_HOST = "http://127.0.0.1:3000" 
 FLOAT = (
     "FLOAT",
     {"default": 1, "min": -sys.float_info.max, "max": sys.float_info.max, "step": 0.01},
