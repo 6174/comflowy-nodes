@@ -1,7 +1,7 @@
 import sys
 
-# API_HOST = "https://app.comflowy.com" 
-API_HOST = "http://127.0.0.1:3000" 
+API_HOST = "https://app.comflowy.com" 
+# API_HOST = "http://127.0.0.1:3000" 
 FLOAT = (
     "FLOAT",
     {"default": 1, "min": -sys.float_info.max, "max": sys.float_info.max, "step": 0.01},
@@ -37,6 +37,8 @@ LLM_MODELS = [
   "01-ai/Yi-1.5-6B-Chat",
   "internlm/internlm2_5-7b-chat"
 ]
+
+SAFETY_TOLERANCE = ["1", "2", "3", "4", "5"]
 
 class AnyType(str):
     """A special class that is always equal in not equal comparisons. Credit to pythongosssss"""

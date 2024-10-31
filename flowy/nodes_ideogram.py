@@ -52,7 +52,7 @@ Nodes from https://comflowy.com:
             logger.error(error_msg)
             raise ValueError(error_msg)
 
-        logger.info(f"开始处理 Ideogram 图像生成请求。prompt: {prompt}, negative_prompt: {negative_prompt}, resolution: {resolution}, style_type: {style_type}, aspect_ratio: {aspect_ratio}, magic_prompt_option: {magic_prompt_option}, seed: {seed}")
+        logger.info(f"Starting Ideogram image generation request. prompt: {prompt}, negative_prompt: {negative_prompt}, resolution: {resolution}, style_type: {style_type}, aspect_ratio: {aspect_ratio}, magic_prompt_option: {magic_prompt_option}, seed: {seed}")
 
         try:
             response = requests.post(
@@ -72,60 +72,60 @@ Nodes from https://comflowy.com:
             response.raise_for_status()
             result = response.json()
 
-            logger.info(f"API 请求完成。状态码: {response.status_code}")
-            logger.debug(f"API 响应内容: {json.dumps(result, indent=2)}")
+            logger.info(f"API request completed. Status code: {response.status_code}")
+            logger.debug(f"API response content: {json.dumps(result, indent=2)}")
 
             if not result.get('success'):
-                logger.error(f"API 请求失败。响应内容: {json.dumps(result, indent=2)}")
-                raise Exception(f"API 请求失败。响应内容: {json.dumps(result, indent=2)}")
+                logger.error(f"API request failed. Response content: {json.dumps(result, indent=2)}")
+                raise Exception(f"API request failed. Response content: {json.dumps(result, indent=2)}")
 
             output_url = result.get('data', {}).get('output')
             if not output_url or not isinstance(output_url, str):
-                logger.error(f"完整的 API 响应: {json.dumps(result, indent=2)}")
-                raise Exception(f"无法获取有效的输出图像 URL。API 响应中没有预期的数据结构。完整响应: {json.dumps(result, indent=2)}")
+                logger.error(f"Complete API response: {json.dumps(result, indent=2)}")
+                raise Exception(f"Unable to get valid output image URL. API response does not have expected data structure. Complete response: {json.dumps(result, indent=2)}")
 
-            logger.info(f"获取到的输出 URL: {output_url}")
+            logger.info(f"Obtained output URL: {output_url}")
 
-            # 验证 URL 是否可访问
+            # Verify URL is accessible
             try:
                 url_check = requests.head(output_url)
                 url_check.raise_for_status()
             except requests.RequestException as e:
-                logger.error(f"无法访问输出 URL: {str(e)}")
-                raise Exception(f"无法访问输出 URL: {str(e)}")
+                logger.error(f"Unable to access output URL: {str(e)}")
+                raise Exception(f"Unable to access output URL: {str(e)}")
 
-            # 添加延迟,等待 Replicate 处理完成
+            # Add delay, wait for Replicate to process
             time.sleep(10)
 
             img_response = requests.get(output_url, stream=True)
             img_response.raise_for_status()
 
-            # 将图像数据转换为 PIL Image
+            # Convert image data to PIL Image
             img = Image.open(img_response.raw)
 
-            # 转换为 numpy 数组
+            # Convert to numpy array
             img_np = np.array(img)
 
-            # 确保图像是 3 通道 RGB
-            if len(img_np.shape) == 2:  # 灰度图像
+            # Ensure image is 3 channel RGB
+            if len(img_np.shape) == 2:  # Grayscale image
                 img_np = np.stack([img_np] * 3, axis=-1)
-            elif img_np.shape[-1] == 4:  # RGBA 图像
+            elif img_np.shape[-1] == 4:  # RGBA image
                 img_np = img_np[:, :, :3]
 
-            # 转换为 float32 并归一化到 0-1 范围
+            # Convert to float32 and normalize to 0-1 range
             img_np = img_np.astype(np.float32) / 255.0
 
-            # 转换为 torch tensor，确保形状为 [B,H,W,C]
-            img_tensor = torch.from_numpy(img_np).unsqueeze(0)  # 添加批次维度
+            # Convert to torch tensor, ensuring shape is [B,H,W,C]
+            img_tensor = torch.from_numpy(img_np).unsqueeze(0)  # Add batch dimension
 
-            logger.info(f"图像处理完成。输出张量形状: {img_tensor.shape}")
+            logger.info(f"Image processing completed. Output tensor shape: {img_tensor.shape}")
 
             return (img_tensor,)
 
         except Exception as e:
-            error_msg = f"图像生成过程中出错: {str(e)}"
+            error_msg = f"Error during image generation: {str(e)}"
             logger.error(error_msg)
-            logger.exception("详细错误信息:")
-            # 返回一个错误标记图像，确保形状为 [B,H,W,C]
+            logger.exception("Detailed error information:")
+            # Return an error marked image, ensuring shape is [B,H,W,C]
             error_image = torch.zeros((1, 100, 400, 3), dtype=torch.float32)
             return (error_image,)

@@ -4,7 +4,7 @@ import logging
 from .types import STRING
 from .api_key_manager import save_api_key
 
-# 设置日志
+# Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ from .nodes_json import FlowyPreviewJSON, FlowyExtractJSON, ComflowyLoadJSON
 from .nodes_http import FlowyHttpRequest
 from .nodes_llm import FlowyLLM
 from .nodes_upscale import FlowyUpscale
-from .nodes_flux import ComflowyFlux
+from .nodes_flux import FlowyFlux
 from .nodes_ideogram import FlowyIdeogram
 
 
@@ -72,7 +72,7 @@ NODE_CLASS_MAPPINGS = {
     "Comflowy_Set_API_Key": ComflowySetAPIKey,
     "Comflowy_Upscale": FlowyUpscale,
     "Comflowy_Ideogram": FlowyIdeogram,
-    "Comflowy_Flux": ComflowyFlux,
+    "Comflowy_Flux": FlowyFlux,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
