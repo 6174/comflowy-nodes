@@ -19,7 +19,7 @@ from .nodes_omost import (
 from .nodes_json import FlowyPreviewJSON, FlowyExtractJSON, ComflowyLoadJSON
 from .nodes_http import FlowyHttpRequest
 from .nodes_llm import FlowyLLM
-from .nodes_upscale import FlowyUpscale
+from .nodes_clarityupscale import FlowyClarityUpscale
 from .nodes_flux import FlowyFlux
 from .nodes_ideogram import FlowyIdeogram
 
@@ -70,7 +70,7 @@ NODE_CLASS_MAPPINGS = {
     "Comflowy_Omost_Load_Canvas_Python_Code": ComflowyOmostLoadCanvasPythonCodeNode,
     "Comflowy_Omost_Load_Canvas_Conditioning": ComflowyOmostLoadCanvasConditioningNode,
     "Comflowy_Set_API_Key": ComflowySetAPIKey,
-    "Comflowy_Upscale": FlowyUpscale,
+    "Comflowy_Upscale": FlowyClarityUpscale,
     "Comflowy_Ideogram": FlowyIdeogram,
     "Comflowy_Flux": FlowyFlux,
 }

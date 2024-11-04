@@ -7,8 +7,7 @@ import torch
 import numpy as np
 import logging
 import json
-from .types import STRING, INT, API_HOST, SAFETY_TOLERANCE, BOOLEAN
-from .utils import logger, get_nested_value
+from .types import STRING, INT, SAFETY_TOLERANCE, BOOLEAN, get_api_host
 from .api_key_manager import load_api_key
 
 logger = logging.getLogger(__name__)
@@ -60,7 +59,7 @@ Nodes from https://comflowy.com:
 
     def generate(self, prompt, version, aspect_ratio, height, width, seed, prompt_upsampling, safety_tolerance, output_quality):
         api_key = load_api_key()
-        
+        API_HOST = get_api_host()
         if not api_key:
             error_msg = "API Key is not set. Please use the 'Comflowy Set API Key' node to set a global API Key before using this node."
             logger.error(error_msg)
@@ -70,7 +69,7 @@ Nodes from https://comflowy.com:
 
         try:
             response = requests.post(
-                f"{API_HOST}/api/open/v0/flux",
+                f"{API_HOST}/api/open/v0/flowy",
                 headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                 json={
                     "prompt": prompt,
@@ -82,6 +81,7 @@ Nodes from https://comflowy.com:
                     "prompt_upsampling": prompt_upsampling,
                     "safety_tolerance": safety_tolerance,
                     "output_quality": output_quality,
+                    "model_type": "flux",
                 }
             )
             response.raise_for_status()
@@ -97,11 +97,11 @@ Nodes from https://comflowy.com:
             output_url = result.get('data', {}).get('output')
             if not output_url or not isinstance(output_url, str):
                 logger.error(f"Complete API response: {json.dumps(result, indent=2)}")
-                raise Exception(f"Unable to get valid output image URL. API response does not have expected data structure. Complete response: {json.dumps(result, indent=2)}")
+                raise Exception(f"Unable to get valid output image URL. API response doesn't have expected data structure. Complete response: {json.dumps(result, indent=2)}")
 
             logger.info(f"Obtained output URL: {output_url}")
 
-            # Verify URL is accessible
+            # Verify if URL is accessible
             try:
                 url_check = requests.head(output_url)
                 url_check.raise_for_status()
@@ -109,7 +109,7 @@ Nodes from https://comflowy.com:
                 logger.error(f"Unable to access output URL: {str(e)}")
                 raise Exception(f"Unable to access output URL: {str(e)}")
 
-            # Add delay, wait for Replicate to process
+            # Add delay to wait for Replicate processing
             time.sleep(10)
 
             img_response = requests.get(output_url, stream=True)
@@ -121,7 +121,7 @@ Nodes from https://comflowy.com:
             # Convert to numpy array
             img_np = np.array(img)
 
-            # Ensure image is 3 channel RGB
+            # Ensure image has 3 RGB channels
             if len(img_np.shape) == 2:  # Grayscale image
                 img_np = np.stack([img_np] * 3, axis=-1)
             elif img_np.shape[-1] == 4:  # RGBA image
@@ -130,7 +130,7 @@ Nodes from https://comflowy.com:
             # Convert to float32 and normalize to 0-1 range
             img_np = img_np.astype(np.float32) / 255.0
 
-            # Convert to torch tensor, ensuring shape is [B,H,W,C]
+            # Convert to torch tensor, ensure shape is [B,H,W,C]
             img_tensor = torch.from_numpy(img_np).unsqueeze(0)  # Add batch dimension
 
             logger.info(f"Image processing completed. Output tensor shape: {img_tensor.shape}")
@@ -141,6 +141,6 @@ Nodes from https://comflowy.com:
             error_msg = f"Error during image generation: {str(e)}"
             logger.error(error_msg)
             logger.exception("Detailed error information:")
-            # Return an error marked image, ensuring shape is [B,H,W,C]
+            # Return an error marker image, ensure shape is [B,H,W,C]
             error_image = torch.zeros((1, 100, 400, 3), dtype=torch.float32)
             return (error_image,)

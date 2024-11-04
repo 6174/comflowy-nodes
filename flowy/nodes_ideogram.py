@@ -56,7 +56,7 @@ Nodes from https://comflowy.com:
 
         try:
             response = requests.post(
-                f"{API_HOST}/api/open/v0/ideogram",
+                f"{API_HOST}/api/open/v0/flowy",
                 headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                 json={
                     "prompt": prompt,
@@ -67,6 +67,7 @@ Nodes from https://comflowy.com:
                     "aspect_ratio": aspect_ratio,
                     "magic_prompt_option": magic_prompt_option,
                     "seed": seed,
+                    "model_type": "ideogram",
                 }
             )
             response.raise_for_status()
@@ -82,31 +83,28 @@ Nodes from https://comflowy.com:
             output_url = result.get('data', {}).get('output')
             if not output_url or not isinstance(output_url, str):
                 logger.error(f"Complete API response: {json.dumps(result, indent=2)}")
-                raise Exception(f"Unable to get valid output image URL. API response does not have expected data structure. Complete response: {json.dumps(result, indent=2)}")
+                raise Exception(f"Unable to get valid output image URL. API response doesn't have expected data structure. Complete response: {json.dumps(result, indent=2)}")
 
-            logger.info(f"Obtained output URL: {output_url}")
+            logger.info(f"Received output URL: {output_url}")
 
-            # Verify URL is accessible
+            # Verify if URL is accessible
             try:
                 url_check = requests.head(output_url)
                 url_check.raise_for_status()
             except requests.RequestException as e:
-                logger.error(f"Unable to access output URL: {str(e)}")
-                raise Exception(f"Unable to access output URL: {str(e)}")
+                logger.error(f"Cannot access output URL: {str(e)}")
+                raise Exception(f"Cannot access output URL: {str(e)}")
 
-            # Add delay, wait for Replicate to process
+            # Add delay to wait for Replicate processing
             time.sleep(10)
 
             img_response = requests.get(output_url, stream=True)
             img_response.raise_for_status()
 
-            # Convert image data to PIL Image
-            img = Image.open(img_response.raw)
-
             # Convert to numpy array
             img_np = np.array(img)
 
-            # Ensure image is 3 channel RGB
+            # Ensure image has 3 RGB channels
             if len(img_np.shape) == 2:  # Grayscale image
                 img_np = np.stack([img_np] * 3, axis=-1)
             elif img_np.shape[-1] == 4:  # RGBA image
@@ -115,7 +113,7 @@ Nodes from https://comflowy.com:
             # Convert to float32 and normalize to 0-1 range
             img_np = img_np.astype(np.float32) / 255.0
 
-            # Convert to torch tensor, ensuring shape is [B,H,W,C]
+            # Convert to torch tensor, ensure shape is [B,H,W,C]
             img_tensor = torch.from_numpy(img_np).unsqueeze(0)  # Add batch dimension
 
             logger.info(f"Image processing completed. Output tensor shape: {img_tensor.shape}")
@@ -126,6 +124,6 @@ Nodes from https://comflowy.com:
             error_msg = f"Error during image generation: {str(e)}"
             logger.error(error_msg)
             logger.exception("Detailed error information:")
-            # Return an error marked image, ensuring shape is [B,H,W,C]
+            # Return an error marker image, ensure shape is [B,H,W,C]
             error_image = torch.zeros((1, 100, 400, 3), dtype=torch.float32)
             return (error_image,)
