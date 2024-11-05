@@ -1,6 +1,37 @@
+import json
 import sys
+import os
 
-API_HOST = "https://app.comflowy.com"  # "http://127.0.0.1:3000"  #
+API_HOST = "https://app.comflowy.com"
+# API_HOST = "http://127.0.0.1:3000" 
+
+custom_node_api_config_inited = False
+
+def init_custom_node_api_config_from_file():
+    global API_HOST, PPT_TOKEN, RUN_ID, custom_node_api_config_inited
+    config_path = "/comfyui/custom_node_api_config.json"
+    
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, "r") as f:
+                config = json.load(f)
+                API_HOST = config.get("domain", API_HOST)
+                PPT_TOKEN = config.get("ppt_token", PPT_TOKEN)
+                RUN_ID = config.get("run_id", RUN_ID)
+            custom_node_api_config_inited = True
+            print(f"Custom node API config initialized: API_HOST={API_HOST}, PPT_TOKEN={PPT_TOKEN}, RUN_ID={RUN_ID}")
+        except Exception as e:
+            print(f"Error reading custom node api config: {e}")
+    else:
+        print("Custom node API config file not found. Using default values.")
+
+init_custom_node_api_config_from_file()
+
+def get_api_host():
+    if not custom_node_api_config_inited:
+        init_custom_node_api_config_from_file()
+    return API_HOST
+
 FLOAT = (
     "FLOAT",
     {"default": 1, "min": -sys.float_info.max, "max": sys.float_info.max, "step": 0.01},
@@ -37,6 +68,8 @@ LLM_MODELS = [
   "internlm/internlm2_5-7b-chat"
 ]
 
+SAFETY_TOLERANCE = ["1", "2", "3", "4", "5"]
+
 class AnyType(str):
     """A special class that is always equal in not equal comparisons. Credit to pythongosssss"""
 
@@ -47,3 +80,4 @@ class AnyType(str):
         return False
 
 any = AnyType("*")
+
