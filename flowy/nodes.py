@@ -70,7 +70,7 @@ NODE_CLASS_MAPPINGS = {
     "Comflowy_Omost_Load_Canvas_Python_Code": ComflowyOmostLoadCanvasPythonCodeNode,
     "Comflowy_Omost_Load_Canvas_Conditioning": ComflowyOmostLoadCanvasConditioningNode,
     "Comflowy_Set_API_Key": ComflowySetAPIKey,
-    "Comflowy_Upscale": FlowyClarityUpscale,
+    "Comflowy_Clarity_Upscale": FlowyClarityUpscale,
     "Comflowy_Ideogram": FlowyIdeogram,
     "Comflowy_Flux": FlowyFlux,
 }
@@ -87,7 +87,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Comflowy_Omost_Load_Canvas_Python_Code": "Comflowy Omost Load Canvas Python Code",
     "Comflowy_Omost_Load_Canvas_Conditioning": "Comflowy Omost Load Canvas Conditioning",
     "Comflowy_Set_API_Key": "Comflowy Set API Key",
-    "Comflowy_Upscale": "Comflowy Upscale",
+    "Comflowy_Clarity_Upscale": "Comflowy Clarity Upscale",
     "Comflowy_Ideogram": "Comflowy Ideogram",
     "Comflowy_Flux": "Comflowy Flux",
 }
