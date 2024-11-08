@@ -4,16 +4,14 @@
 
 <div>
 
-  ![Version](https://img.shields.io/badge/node_version-0.1-lightblue)
+  ![Version](https://img.shields.io/badge/node_version-0.2-lightblue)
   <a href="https://discord.gg/cj623WvcVx">
     <img src="https://dcbadge.vercel.app/api/server/cj623WvcVx?style=flat" />
   </a>
 
 </div>
 
-在开发 Comflowy 产品的时候，我们发现虽然社区里有很多插件，但有不少节点更多的是为了解决特定的问题，或者实现某个特定的技术。在用户体验上，相对没那么友好。
-
-所以我们决定根据我们的需求，开发一些通用的节点，以便各位更好地使用 ComfyUI。
+在使用 ComfyUI 的时候，我们使用的模型基本上都是开源的模型。有些效果很不错的闭源模型，却无法在 ComfyUI 里使用。为了解决这个问题，我们开发了 Comflowy 插件。希望能将这些效果不错的闭源模型也接入到 ComfyUI 里，这样各位就能通过 ComfyUI 将各种闭源模型串联起来使用了。
 
 ## 一、节点列表
 
@@ -35,8 +33,42 @@
       
       ![image](images/Omost_LLM.png)
     </detials>
+3. **Comflowy Flux 节点：** Flux Pro 是一个非开源的模型，所以大多数情况下，你无法在 ComfyUI 里使用这个模型。为了解决这个问题，我们开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。
+   * 在线版 [应用](https://app.comflowy.com/app/app-general-image-by-flux-153b)（无需 Workflow 即可使用）。
+   * <details>
+      <summary>工作流截图</summary>
+      <br/>
 
-## 二、如何使用
+      ![image](images/flux.png)
+    </details>
+4. **Comflowy Ideogram 节点：** 与 Flux 类似 Ideogram 也是一个非开源的模型，所以我们还开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。
+   * 在线版 [应用](https://app.comflowy.com/app/app-general-image-by-ideogram-b453)（无需 Workflow 即可使用）。
+   * <details>
+      <summary>工作流截图</summary>
+      <br/>
+
+      ![image](images/ideogram.png)
+    </details>
+5. **Comflowy Clarity Upscale 节点：** 这是一个能将图片放大，提升图片质量的节点。这个节点号称是 Magnific 的替代模型。海外网红开发者 [levlsio](https://twitter.com/levelsio/status/1827404021684170902) 盛赞过此模型。
+   * 在线版 [应用](https://app.comflowy.com/app/app-clarity-upscale-4257)（无需 Workflow 即可使用）。
+   * <details>
+      <summary>工作流截图</summary>
+      <br/>
+
+      ![image](images/clarity.png)
+    </details>
+
+## 二、价格
+
+| 节点 | 价格 |
+| --- | --- |
+| LLM | 免费 |
+| Omost | 免费 |
+| Flux | Flux-1.1-pro 每张图大约消耗 400 积分。Flux-pro 每张图大约消耗 550 积分。 |
+| Ideogram | Ideogram-v2-turbo 每张图大约消耗 800 积分。Ideogram-v2 每张图大约消耗 500 积分。 |
+| Clarity Upscale | 每张图大约消耗 500 积分，但这个价格会根据你的输入而有所不同。 |
+
+## 三、如何使用
 
 > [!NOTE]
 > 需要注意，在使用 Comflowy 插件的时候，有可能会出现因为网络问题导致无法正常使用的情况。如果遇到类似 `Failed to get response from LLM model with https://app.comflowy.com/api/open/v0/prompt` 的报错，请检查一下网络状态。
@@ -77,11 +109,12 @@
   ![image](images/API_Key_Node.png)
 </details>
 
-## 三、更新记录
+## 四、更新记录
 
+* V0.2：新增 Flux 节点、Ideogram 节点。
 * V0.1：支持 LLM 节点、Omost 节点、Http 节点。
 
-## 四、感谢
+## 五、感谢
 
 1. 感谢 [SiliconFlow](https://siliconflow.cn/) 提供的免费 LLM 服务。
 2. 感谢 [Omost](https://github.com/lllyasviel/Omost) 作者以及 [ComfyUI-Omost](https://github.com/huchenlei/ComfyUI_omost?tab=readme-ov-file) 插件的作者。

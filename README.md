@@ -4,7 +4,7 @@
 
 <div>
 
-  ![Version](https://img.shields.io/badge/node_version-0.1-lightblue)
+  ![Version](https://img.shields.io/badge/node_version-0.2-lightblue)
   <a href="https://discord.gg/cj623WvcVx">
     <img src="https://dcbadge.vercel.app/api/server/cj623WvcVx?style=flat" />
   </a>
@@ -12,9 +12,8 @@
   [中文说明](./README_CN.md)
 </div>
 
-While developing Comflowy, we found that although there are many extensions in the community, many nodes are more focused on solving specific problems or implementing certain technologies. In terms of user experience, they are relatively less friendly.
+When using ComfyUI, most of the models we use are open-source models. Some closed-source models with excellent results cannot be used in ComfyUI. To solve this problem, we developed the Comflowy extension. We hope to integrate these high-quality closed-source models into ComfyUI, so that users can chain together various closed-source models through ComfyUI.
 
-So we decided to develop some general-purpose nodes based on our needs to help you better use ComfyUI.
 
 ## I. Node List
 
@@ -36,8 +35,41 @@ So we decided to develop some general-purpose nodes based on our needs to help y
       
       ![image](images/Omost_LLM.png)
     </details>
+3. **Comflowy Flux Node:** Flux is a node that can generate images with Flux Pro. Flux Pro is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
+   * Online version [App](https://app.comflowy.com/app/app-general-image-by-flux-153b).
+   * <details>
+      <summary>Workflow Screenshot</summary>
+      <br/>
 
-## II. How to Use
+      ![image](images/flux.png)
+    </details>
+4. **Comflowy Ideogram Node:** Ideogram is a node that can generate images with Ideogram. Similar to Flux, Ideogram is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
+   * Online version [App](https://app.comflowy.com/app/app-general-image-by-ideogram-b453).
+   * <details>
+      <summary>Workflow Screenshot</summary>
+      <br/>
+
+      ![image](images/ideogram.png)
+    </details>
+5. **Comflowy Clarity Upscale Node:** This is a node that can upscale images. This node is claimed to be a replacement for Magnific. The overseas influencer developer [levlsio](https://twitter.com/levelsio/status/1827404021684170902) praised this model.
+   * Online version [App](https://app.comflowy.com/app/app-clarity-upscale-4257).
+   * <details>
+      <summary>Workflow Screenshot</summary>
+      <br/>
+
+      ![image](images/clarity.png)
+    </details>
+
+## II. Price
+
+| Node | Price |
+| --- | --- |
+| LLM | Free |
+| Omost | Free |
+| Flux | Flux-1.1-pro costs approximately 400 credit per image. Flux-pro costs 550 credits per image. |
+| Ideogram | Ideogram-v2-turbo costs approximately 800 credit per image. Ideogram-v2 costs 500 credits per image. |
+| Clarity Upscale | This model costs approximately 500 credits per image, but this varies depending on your inputs. | 
+## III. How to Use
 
 > [!NOTE]
 > It should be noted that when using the Comflowy extension, there may be situations where it cannot be used normally due to network problems. If you encounter an error like `Failed to get response from LLM model with https://app.comflowy.com/api/open/v0/prompt`, you need to check your network status.
@@ -76,11 +108,12 @@ So we decided to develop some general-purpose nodes based on our needs to help y
   ![image](images/API_Key_Node.png)
 </details>
 
-## III. Update Log
+## IV. Update Log
 
+* V0.2: Added Flux node, Ideogram node.
 * V0.1: Support for LLM node, Omost node, Http node.
 
-## IV. Acknowledgements
+## V. Acknowledgements
 
 1. Thanks to [SiliconFlow](https://siliconflow.cn/) for providing free LLM services.
 2. Thanks to the author of [Omost](https://github.com/lllyasviel/Omost) and the author of the [ComfyUI-Omost](https://github.com/huchenlei/ComfyUI_omost?tab=readme-ov-file) extension.
