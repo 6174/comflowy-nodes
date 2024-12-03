@@ -1,0 +1,551 @@
+{
+    "url": "https://replicate.com/stability-ai/stable-diffusion-3",
+    "owner": "stability-ai",
+    "name": "stable-diffusion-3",
+    "description": "A text-to-image model with greatly improved performance in image quality, typography, complex prompt understanding, and resource-efficiency",
+    "visibility": "public",
+    "github_url": "https://github.com/fofr/cog-comfyui-sd3",
+    "paper_url": "https://arxiv.org/pdf/2403.03206",
+    "license_url": "https://github.com/replicate/cog-stable-diffusion-3/blob/main/LICENSE",
+    "run_count": 0,
+    "cover_image_url": "https://tjzk.replicate.delivery/models_models_featured_image/0411f758-80e6-4794-bd5d-d04198d891a5/image-90.png",
+    "default_example": {
+        "id": "9qcv99vaxdrm00cgapvbt3fh4c",
+        "model": "stability-ai/stable-diffusion-3",
+        "version": "72c05df2daf615fb5cc07c28b662a2a58feb6a4d0a652e67e5a9959d914a9ed2",
+        "status": "succeeded",
+        "input": {
+            "cfg": 3.5,
+            "prompt": "a photo of vibrant artistic graffiti on a wall saying \"SD3 medium\"",
+            "aspect_ratio": "3:2",
+            "output_format": "webp",
+            "output_quality": 90,
+            "negative_prompt": ""
+        },
+        "output": [
+            "https://replicate.delivery/yhqm/i4mS31BVDBYVIF0ol6UV2dwHwuztMDbsnlVJBeJ75ViVTQhJA/R8_SD3_00001_.webp"
+        ],
+        "logs": "Seed set to: 448433150\r\nRunning workflow\r\ngot prompt\r\nExecuting node 6, title: CLIP Text Encode (Prompt), class type: CLIPTextEncode\r\nExecuting node 71, title: CLIP Text Encode (Negative Prompt), class type: CLIPTextEncode\r\nExecuting node 67, title: ConditioningZeroOut, class type: ConditioningZeroOut\r\nExecuting node 68, title: ConditioningSetTimestepRange, class type: ConditioningSetTimestepRange\r\nExecuting node 70, title: ConditioningSetTimestepRange, class type: ConditioningSetTimestepRange\r\nExecuting node 69, title: Conditioning (Combine), class type: ConditioningCombine\r\nExecuting node 135, title: EmptySD3LatentImage, class type: EmptySD3LatentImage\r\nExecuting node 271, title: KSampler, class type: KSampler\r\n  0%|          | 0/28 [00:00<?, ?it/s]\r\n  7%|▋         | 2/28 [00:00<00:01, 14.59it/s]\r\n 14%|█▍        | 4/28 [00:00<00:01, 15.14it/s]\r\n 21%|██▏       | 6/28 [00:00<00:01, 15.31it/s]\r\n 29%|██▊       | 8/28 [00:00<00:01, 15.40it/s]\r\n 36%|███▌      | 10/28 [00:00<00:01, 15.44it/s]\r\n 43%|████▎     | 12/28 [00:00<00:01, 15.47it/s]\r\n 50%|█████     | 14/28 [00:00<00:00, 15.48it/s]\r\n 57%|█████▋    | 16/28 [00:01<00:00, 15.50it/s]\r\n 64%|██████▍   | 18/28 [00:01<00:00, 15.51it/s]\r\n 71%|███████▏  | 20/28 [00:01<00:00, 15.51it/s]\r\n 79%|███████▊  | 22/28 [00:01<00:00, 15.52it/s]\r\n 86%|████████▌ | 24/28 [00:01<00:00, 15.52it/s]\r\n 93%|█████████▎| 26/28 [00:01<00:00, 15.51it/s]\r\n100%|██████████| 28/28 [00:01<00:00, 15.49it/s]\r\n100%|██████████| 28/28 [00:01<00:00, 15.44it/s]\r\nExecuting node 231, title: VAE Decode, class type: VAEDecode\r\nExecuting node 273, title: Save Image, class type: SaveImage\r\nPrompt executed in 2.28 seconds\r\noutputs:  {'273': {'images': [{'filename': 'R8_SD3_00001_.png', 'subfolder': '', 'type': 'output'}]}}\r\n====================================\r\nR8_SD3_00001_.png",
+        "error": "",
+        "metrics": {
+            "total_time": 2.317,
+            "image_count": 1,
+            "predict_time": 2.781864785
+        },
+        "created_at": "2024-06-26T18:02:16.683000Z",
+        "started_at": "2024-06-26T18:02:16Z",
+        "completed_at": "2024-06-26T18:02:19Z",
+        "urls": {
+            "get": "https://api.replicate.com/v1/predictions/9qcv99vaxdrm00cgapvbt3fh4c",
+            "cancel": "https://api.replicate.com/v1/predictions/9qcv99vaxdrm00cgapvbt3fh4c/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "527d2a6296facb8e47ba1eaf17f142c240c19a30894f437feee9b91cc29d8e4f",
+        "created_at": "2024-07-16T15:57:20.180462+00:00",
+        "cog_version": "0.9.7",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "properties": {
+                            "cfg": {
+                                "type": "number",
+                                "title": "Cfg",
+                                "default": 3.5,
+                                "maximum": 20,
+                                "minimum": 0,
+                                "x-order": 2,
+                                "description": "The guidance scale tells the model how similar the output should be to the prompt."
+                            },
+                            "seed": {
+                                "type": "integer",
+                                "title": "Seed",
+                                "x-order": 8,
+                                "description": "Set a seed for reproducibility. Random by default."
+                            },
+                            "image": {
+                                "type": "string",
+                                "title": "Image",
+                                "format": "uri",
+                                "x-order": 3,
+                                "description": "Input image for image to image mode. The aspect ratio of your output will match this image."
+                            },
+                            "steps": {
+                                "type": "integer",
+                                "title": "Steps",
+                                "default": 28,
+                                "maximum": 28,
+                                "minimum": 1,
+                                "x-order": 5,
+                                "description": "Number of steps to run the sampler for."
+                            },
+                            "prompt": {
+                                "type": "string",
+                                "title": "Prompt",
+                                "default": "",
+                                "x-order": 0
+                            },
+                            "aspect_ratio": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/aspect_ratio"
+                                    }
+                                ],
+                                "default": "1:1",
+                                "x-order": 1,
+                                "description": "The aspect ratio of your output image. This value is ignored if you are using an input image."
+                            },
+                            "output_format": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/output_format"
+                                    }
+                                ],
+                                "default": "webp",
+                                "x-order": 6,
+                                "description": "Format of the output images"
+                            },
+                            "output_quality": {
+                                "type": "integer",
+                                "title": "Output Quality",
+                                "default": 90,
+                                "maximum": 100,
+                                "minimum": 0,
+                                "x-order": 7,
+                                "description": "Quality of the output images, from 0 to 100. 100 is best quality, 0 is lowest quality."
+                            },
+                            "negative_prompt": {
+                                "type": "string",
+                                "title": "Negative Prompt",
+                                "default": "",
+                                "x-order": 9,
+                                "description": "Negative prompts do not really work in SD3. Using a negative prompt will change your output in unpredictable ways."
+                            },
+                            "prompt_strength": {
+                                "type": "number",
+                                "title": "Prompt Strength",
+                                "default": 0.85,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 4,
+                                "description": "Prompt strength (or denoising strength) when using image to image. 1.0 corresponds to full destruction of information in image."
+                            }
+                        }
+                    },
+                    "Output": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "title": "Output"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "aspect_ratio": {
+                        "enum": [
+                            "1:1",
+                            "16:9",
+                            "21:9",
+                            "3:2",
+                            "2:3",
+                            "4:5",
+                            "5:4",
+                            "9:16",
+                            "9:21"
+                        ],
+                        "type": "string",
+                        "title": "aspect_ratio",
+                        "description": "An enumeration."
+                    },
+                    "output_format": {
+                        "enum": [
+                            "webp",
+                            "jpg",
+                            "png"
+                        ],
+                        "type": "string",
+                        "title": "output_format",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

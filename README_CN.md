@@ -33,7 +33,7 @@
       
       ![image](images/Omost_LLM.png)
     </detials>
-3. **Comflowy Flux 节点：** Flux Pro 是一个非开源的模型，所以大多数情况下，你无法在 ComfyUI 里使用这个模型。为了解决这个问题，我们开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。
+3. **Comflowy Flux Pro 节点：** Flux Pro 是一个非开源的模型，所以大多数情况下，你无法在 ComfyUI 里使用这个模型。为了解决这个问题，我们开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。
    * 在线版 [应用](https://app.comflowy.com/app/app-general-image-by-flux-153b)（无需 Workflow 即可使用）。
    * <details>
       <summary>工作流截图</summary>
@@ -41,7 +41,9 @@
 
       ![image](images/flux.png)
     </details>
-4. **Comflowy Ideogram 节点：** 与 Flux 类似 Ideogram 也是一个非开源的模型，所以我们还开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。
+4. **Comflowy Flux Pro Ultra 节点：** Flux Pro Ultra 模型是 Flux 最新推出的高清模型。并且你还可以将 Raw 参数设置为 True，这样 Flux 输出的图片会更加真实与精细。
+5. **Comflowy Flux Dev Lora 节点：** Flux Dev Lora 节点是一个可以让你任意加载 Flux LoRA 的节点，你只需要将 Flux LoRA 的模型下载地址填写到节点里，就可以加载使用。
+6. **Comflowy Ideogram 节点：** 与 Flux 类似 Ideogram 也是一个非开源的模型，所以我们还开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。这个模型非常适合生成带字的海报。效果个人感觉比 Flux 更好。
    * 在线版 [应用](https://app.comflowy.com/app/app-general-image-by-ideogram-b453)（无需 Workflow 即可使用）。
    * <details>
       <summary>工作流截图</summary>
@@ -49,7 +51,8 @@
 
       ![image](images/ideogram.png)
     </details>
-5. **Comflowy Clarity Upscale 节点：** 这是一个能将图片放大，提升图片质量的节点。这个节点号称是 Magnific 的替代模型。海外网红开发者 [levlsio](https://twitter.com/levelsio/status/1827404021684170902) 盛赞过此模型。
+7. **Comflowy Recraft 节点：** 与 Flux 类似，Recraft 也是一个非开源的模型，所以我们还开发了这个节点，它允许你直接在 ComfyUI 里生成图片。但请注意，这个模型是一个商业模型，所以每次使用都会扣除你的积分。这个模型与 Ideogram 类似，非常适合生成带字的海报或图片，另外，因为其预设了很多效果，使用起来会更加方便。
+8. **Comflowy Clarity Upscale 节点：** 这是一个能将图片放大，提升图片质量的节点。这个节点号称是 Magnific 的替代模型。海外网红开发者 [levlsio](https://twitter.com/levelsio/status/1827404021684170902) 盛赞过此模型。
    * 在线版 [应用](https://app.comflowy.com/app/app-clarity-upscale-4257)（无需 Workflow 即可使用）。
    * <details>
       <summary>工作流截图</summary>
@@ -57,6 +60,9 @@
 
       ![image](images/clarity.png)
     </details>
+9. **Comflowy Replicate 节点：** 感谢 [Replicate](https://github.com/replicate/comfyui-replicate) 提供的服务和代码，现在你可以使用 Replicate 里的模型了。
+10. **Comflowy Hailuo 视频节点：** 这个节点使用的是 Hailuo AI 的模型，它可以将图片转换为视频。需要注意，使用此节点需要搭配 Comflowy Preview Video 节点使用。
+11. **Comflowy Kling 图片节点：** 这个节点使用的是 Kling AI 的模型，它可以将图片转换为视频。需要注意，使用此节点需要搭配 Comflowy Preview Video 节点使用。
 
 ## 二、价格
 
@@ -64,9 +70,15 @@
 | --- | --- |
 | LLM | 免费 |
 | Omost | 免费 |
-| Flux | Flux-1.1-pro 每张图大约消耗 400 积分。Flux-pro 每张图大约消耗 550 积分。 |
+| Flux Pro | Flux-1.1-pro 每张图大约消耗 400 积分。Flux-pro 每张图大约消耗 550 积分。 |
+| Flux Pro Ultra | 每张图大约消耗 600 积分。 |
+| Flux Dev Lora | 每张图大约消耗 350 积分。 |
 | Ideogram | Ideogram-v2-turbo 每张图大约消耗 800 积分。Ideogram-v2 每张图大约消耗 500 积分。 |
-| Clarity Upscale | 每张图大约消耗 500 积分，但这个价格会根据你的输入而有所不同。 |
+| Recraft | 每张图大约消耗 400～800 积分不等。 |
+| Replicate | 这个取决于你使用了何种模型，以及所消耗的时间。 |
+| Hailuo | 每个视频大约消耗 5000 积分。 |
+| Kling | 消耗的积分个取决于视频的长度。 |
+
 
 ## 三、如何使用
 

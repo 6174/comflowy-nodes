@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-replicate"
+description = "Run Replicate models in ComfyUI"
+version = "1.1.0"
+license = { file = "LICENSE" }
+
+[project.urls]
+Repository = "https://github.com/replicate/comfyui-replicate"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "fofr"
+DisplayName = "ComfyUI-Replicate"
+Icon = ""

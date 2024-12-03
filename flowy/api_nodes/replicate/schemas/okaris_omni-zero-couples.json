@@ -1,0 +1,599 @@
+{
+    "url": "https://replicate.com/okaris/omni-zero-couples",
+    "owner": "okaris",
+    "name": "omni-zero-couples",
+    "description": "Omni-Zero Couples: A diffusion pipeline for zero-shot stylized couples portrait creation.",
+    "visibility": "public",
+    "github_url": "https://github.com/okaris/omni-zero-couples",
+    "paper_url": null,
+    "license_url": "https://github.com/okaris/omni-zero-couples/blob/main/LICENSE",
+    "run_count": 0,
+    "cover_image_url": "https://tjzk.replicate.delivery/models_models_featured_image/69abe29c-832c-496a-b052-3c10d5f61a08/replicate-prediction-8_LpV9IO9.jpg",
+    "default_example": {
+        "id": "834y1tkrj1rgm0cj56zbemt884",
+        "model": "okaris/omni-zero-couples",
+        "version": "eaaa7d8cf2c745c9b629606fe35f14b06a980f28b04e176ed3a35c396dd206a4",
+        "status": "succeeded",
+        "input": {
+            "seed": -1,
+            "prompt": "Cinematic still photo of a couple. emotional, harmonious, vignette, 4k epic detailed, shot on kodak, 35mm photo, sharp focus, high budget, cinemascope, moody, epic, gorgeous, film grain, grainy",
+            "base_image": "https://cdn-prod.styleof.com/inferences/cm1ho5cjl14nh14jec6phg2h8/i6k59e7gpsr45ufc7l8kun0g-medium.jpeg",
+            "style_image": "https://cdn-prod.styleof.com/inferences/cm1ho5cjl14nh14jec6phg2h8/i6k59e7gpsr45ufc7l8kun0g-medium.jpeg",
+            "guidance_scale": 3,
+            "negative_prompt": "anime, cartoon, graphic, (blur, blurry, bokeh), text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured",
+            "number_of_steps": 10,
+            "identity_image_1": "https://cdn-prod.styleof.com/inferences/cm1hp4lea14oz14jeoghnex7g/dlgc5xwo0qzey7qaixy45i1o-medium.jpeg",
+            "identity_image_2": "https://cdn-prod.styleof.com/inferences/cm1ho69ha14np14jesnusqiep/mp3aaktzqz20ujco5i3bi5s1-medium.jpeg",
+            "number_of_images": 1,
+            "mask_guidance_end": 1,
+            "base_image_strength": 0.3,
+            "mask_guidance_start": 0,
+            "depth_image_strength": 0.2,
+            "style_image_strength": 1,
+            "identity_image_strength_1": 1,
+            "identity_image_strength_2": 1
+        },
+        "output": [
+            "https://replicate.delivery/pbxt/q9k6DenF0wUnBqO1e6LRy6hecMRDnhYpwzklHHJeWRws52BOB/oz_output_0.jpg"
+        ],
+        "logs": "base_image <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=960x720 at 0x711A70743410>\nstyle_image <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=960x720 at 0x711B65DC6810>\nidentity_image_1 <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=960x720 at 0x711B65DC49D0>\nidentity_image_2 <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=960x720 at 0x71197C256B90>\ndepth_image None\n/root/.pyenv/versions/3.11.10/lib/python3.11/site-packages/insightface/utils/transform.py:68: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.\nTo use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.\nP = np.linalg.lstsq(X_homo, Y)[0].T # Affine matrix. 3 x 4\nFace 1 -0: Age: 28, Gender: 0\nFace 2 -0: Age: 76, Gender: 1\n  0%|          | 0/10 [00:00<?, ?it/s]/root/.pyenv/versions/3.11.10/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:608: UserWarning: Should have tb<=t1 but got tb=2.3583380698653342 and t1=2.358338.\nwarnings.warn(f\"Should have {tb_name}<=t1 but got {tb_name}={tb} and t1={self._end}.\")\n 10%|█         | 1/10 [00:00<00:05,  1.74it/s]\n 20%|██        | 2/10 [00:01<00:04,  1.87it/s]\n 30%|███       | 3/10 [00:01<00:03,  1.93it/s]\n 40%|████      | 4/10 [00:02<00:03,  1.92it/s]\n 50%|█████     | 5/10 [00:02<00:02,  1.95it/s]\n 60%|██████    | 6/10 [00:03<00:02,  1.87it/s]\n 70%|███████   | 7/10 [00:03<00:01,  1.91it/s]\n 80%|████████  | 8/10 [00:04<00:01,  1.91it/s]\n 90%|█████████ | 9/10 [00:04<00:00,  1.94it/s]/root/.pyenv/versions/3.11.10/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:599: UserWarning: Should have ta>=t0 but got ta=0.0 and t0=0.075972.\nwarnings.warn(f\"Should have ta>=t0 but got ta={ta} and t0={self._start}.\")\n100%|██████████| 10/10 [00:05<00:00,  1.94it/s]\n100%|██████████| 10/10 [00:05<00:00,  1.92it/s]",
+        "error": null,
+        "metrics": {
+            "predict_time": 12.610415932,
+            "total_time": 266.22628
+        },
+        "created_at": "2024-09-25T15:13:21.552000Z",
+        "started_at": "2024-09-25T15:17:35.167864Z",
+        "completed_at": "2024-09-25T15:17:47.778280Z",
+        "urls": {
+            "get": "https://api.replicate.com/v1/predictions/834y1tkrj1rgm0cj56zbemt884",
+            "cancel": "https://api.replicate.com/v1/predictions/834y1tkrj1rgm0cj56zbemt884/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "24ed4a267cd458569aa9f4da971ccc8d3587eaa47c43cf79572c3c7738a390f9",
+        "created_at": "2024-09-25T19:50:42.188320+00:00",
+        "cog_version": "0.9.24",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "properties": {
+                            "seed": {
+                                "type": "integer",
+                                "title": "Seed",
+                                "default": -1,
+                                "x-order": 8,
+                                "description": "Random seed for the model. Use -1 for random"
+                            },
+                            "prompt": {
+                                "type": "string",
+                                "title": "Prompt",
+                                "default": "Cinematic still photo of a couple. emotional, harmonious, vignette, 4k epic detailed, shot on kodak, 35mm photo, sharp focus, high budget, cinemascope, moody, epic, gorgeous, film grain, grainy",
+                                "x-order": 9,
+                                "description": "Prompt for the model"
+                            },
+                            "base_image": {
+                                "type": "string",
+                                "title": "Base Image",
+                                "format": "uri",
+                                "x-order": 0,
+                                "description": "Base image for the model"
+                            },
+                            "depth_image": {
+                                "type": "string",
+                                "title": "Depth Image",
+                                "format": "uri",
+                                "x-order": 14,
+                                "description": "Depth image for the model"
+                            },
+                            "style_image": {
+                                "type": "string",
+                                "title": "Style Image",
+                                "format": "uri",
+                                "x-order": 2,
+                                "description": "Style image for the model"
+                            },
+                            "guidance_scale": {
+                                "type": "number",
+                                "title": "Guidance Scale",
+                                "default": 3,
+                                "maximum": 14,
+                                "minimum": 0,
+                                "x-order": 11,
+                                "description": "Guidance scale for the model"
+                            },
+                            "negative_prompt": {
+                                "type": "string",
+                                "title": "Negative Prompt",
+                                "default": "anime, cartoon, graphic, (blur, blurry, bokeh), text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured",
+                                "x-order": 10,
+                                "description": "Negative prompt for the model"
+                            },
+                            "number_of_steps": {
+                                "type": "integer",
+                                "title": "Number Of Steps",
+                                "default": 10,
+                                "maximum": 50,
+                                "minimum": 1,
+                                "x-order": 13,
+                                "description": "Number of steps for the model"
+                            },
+                            "identity_image_1": {
+                                "type": "string",
+                                "title": "Identity Image 1",
+                                "format": "uri",
+                                "x-order": 4,
+                                "description": "First identity image for the model"
+                            },
+                            "identity_image_2": {
+                                "type": "string",
+                                "title": "Identity Image 2",
+                                "format": "uri",
+                                "x-order": 6,
+                                "description": "Second identity image for the model"
+                            },
+                            "number_of_images": {
+                                "type": "integer",
+                                "title": "Number Of Images",
+                                "default": 1,
+                                "maximum": 4,
+                                "minimum": 1,
+                                "x-order": 12,
+                                "description": "Number of images to generate"
+                            },
+                            "mask_guidance_end": {
+                                "type": "number",
+                                "title": "Mask Guidance End",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 17,
+                                "description": "Mask guidance end value"
+                            },
+                            "base_image_strength": {
+                                "type": "number",
+                                "title": "Base Image Strength",
+                                "default": 0.2,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 1,
+                                "description": "Base image strength for the model"
+                            },
+                            "mask_guidance_start": {
+                                "type": "number",
+                                "title": "Mask Guidance Start",
+                                "default": 0,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 16,
+                                "description": "Mask guidance start value"
+                            },
+                            "depth_image_strength": {
+                                "type": "number",
+                                "title": "Depth Image Strength",
+                                "default": 0.2,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 15,
+                                "description": "Depth image strength for the model"
+                            },
+                            "style_image_strength": {
+                                "type": "number",
+                                "title": "Style Image Strength",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 3,
+                                "description": "Style image strength for the model"
+                            },
+                            "identity_image_strength_1": {
+                                "type": "number",
+                                "title": "Identity Image Strength 1",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 5,
+                                "description": "First identity image strength for the model"
+                            },
+                            "identity_image_strength_2": {
+                                "type": "number",
+                                "title": "Identity Image Strength 2",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 7,
+                                "description": "Second identity image strength for the model"
+                            }
+                        }
+                    },
+                    "Output": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "title": "Output"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

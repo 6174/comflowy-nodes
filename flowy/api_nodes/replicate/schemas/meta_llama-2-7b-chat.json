@@ -1,0 +1,864 @@
+{
+    "url": "https://replicate.com/meta/llama-2-7b-chat",
+    "owner": "meta",
+    "name": "llama-2-7b-chat",
+    "description": "A 7 billion parameter language model from Meta, fine tuned for chat completions",
+    "visibility": "public",
+    "github_url": "https://github.com/a16z-infra/cog-llama-template",
+    "paper_url": "https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/",
+    "license_url": "https://ai.meta.com/resources/models-and-libraries/llama-downloads/",
+    "run_count": 0,
+    "cover_image_url": "https://tjzk.replicate.delivery/models_models_featured_image/e18de70b-6147-4d42-a730-4777d297737d/llama-logo.png",
+    "default_example": {
+        "id": "7xhvtyjbutohmf2ia5k2men57y",
+        "model": "meta/llama-2-7b-chat",
+        "version": "f1d50bb24186c52daae319ca8366e53debdaa9e0ae7ff976e918df752732ccc4",
+        "status": "succeeded",
+        "input": {
+            "top_p": 1,
+            "prompt": "Tell me how to tailor a men's suit so I look fashionable.",
+            "temperature": 0.75,
+            "system_prompt": "You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n\nIf a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.",
+            "max_new_tokens": 800,
+            "repetition_penalty": 1
+        },
+        "output": [
+            " Of",
+            " course,",
+            " I'd",
+            " be",
+            " happy",
+            " to",
+            " help!",
+            " Tailoring",
+            " a",
+            " men's",
+            " suit",
+            " can",
+            " make",
+            " a",
+            " huge",
+            " difference",
+            " in",
+            " how",
+            " fashionable",
+            " and",
+            " put-together",
+            " you",
+            " look.",
+            " Here",
+            " are",
+            " some",
+            " tips",
+            " to",
+            " help",
+            " you",
+            " tailor",
+            " a",
+            " men's",
+            " suit",
+            " that",
+            " will",
+            " make",
+            " you",
+            " look",
+            " stylish",
+            " and",
+            " fashionable:\n1.",
+            " Know",
+            " your",
+            " measurements:",
+            " Before",
+            " you",
+            " start",
+            " tailoring",
+            " your",
+            " suit,",
+            " it's",
+            " important",
+            " to",
+            " take",
+            " your",
+            " measurements",
+            " to",
+            " ensure",
+            " a",
+            " proper",
+            " fit.",
+            " Measure",
+            " your",
+            " chest,",
+            " waist,",
+            " inseam,",
+            " and",
+            " arm",
+            " length",
+            " to",
+            " give",
+            " to",
+            " your",
+            " tailor.\n2.",
+            " Choose",
+            " the",
+            " right",
+            " fabric:",
+            " The",
+            " fabric",
+            " of",
+            " your",
+            " suit",
+            " can",
+            " greatly",
+            " impact",
+            " how",
+            " it",
+            " looks",
+            " and",
+            " feels.",
+            " Consider",
+            " the",
+            " occasion,",
+            " season,",
+            " and",
+            " your",
+            " personal",
+            " style",
+            " when",
+            " choosing",
+            " the",
+            " fabric.",
+            " For",
+            " example,",
+            " a",
+            " lightweight",
+            " cotton",
+            " or",
+            " wool",
+            " suit",
+            " is",
+            " perfect",
+            " for",
+            " spring",
+            " and",
+            " summer,",
+            " while",
+            " a",
+            " rich,",
+            " luxurious",
+            " wool",
+            " suit",
+            " is",
+            " great",
+            " for",
+            " formal",
+            " events.\n3.",
+            " Get",
+            " the",
+            " right",
+            " fit:",
+            " A",
+            " well-fitted",
+            " suit",
+            " should",
+            " skim",
+            " your",
+            " body",
+            " without",
+            " being",
+            " too",
+            " tight",
+            " or",
+            " too",
+            " loose.",
+            " Make",
+            " sure",
+            " the",
+            " jacket",
+            " is",
+            " long",
+            " enough",
+            " to",
+            " cover",
+            " your",
+            " buttocks",
+            " when",
+            " you",
+            " stand",
+            " up",
+            " straight,",
+            " and",
+            " the",
+            " pants",
+            " should",
+            " be",
+            " long",
+            " enough",
+            " to",
+            " reach",
+            " your",
+            " ankles.\n4.",
+            " Pay",
+            " attention",
+            " to",
+            " the",
+            " shoulders:",
+            " The",
+            " shoulders",
+            " of",
+            " your",
+            " suit",
+            " should",
+            " be",
+            " well-balanced",
+            " and",
+            " not",
+            " too",
+            " narrow",
+            " or",
+            " too",
+            " wide.",
+            " You",
+            " can",
+            " use",
+            " a",
+            " shoulder",
+            " pad",
+            " to",
+            " add",
+            " structure",
+            " and",
+            " definition",
+            " to",
+            " your",
+            " shoulders",
+            " if",
+            " needed.\n5.",
+            " Take",
+            " care",
+            " of",
+            " the",
+            " details:",
+            " Pay",
+            " attention",
+            " to",
+            " the",
+            " little",
+            " details",
+            " that",
+            " can",
+            " make",
+            " a",
+            " big",
+            " difference",
+            " in",
+            " how",
+            " your",
+            " suit",
+            " looks.",
+            " Make",
+            " sure",
+            " the",
+            " pants",
+            " are",
+            " hemmed",
+            " correctly,",
+            " and",
+            " the",
+            " jacket",
+            " has",
+            " a",
+            " clean,",
+            " even",
+            " hem.\n6.",
+            " Get",
+            " it",
+            " altered:",
+            " If",
+            " you",
+            " want",
+            " to",
+            " really",
+            " make",
+            " your",
+            " suit",
+            " stand",
+            " out,",
+            " consider",
+            " getting",
+            " it",
+            " altered.",
+            " A",
+            " tailor",
+            " can",
+            " take",
+            " in",
+            " or",
+            " let",
+            " out",
+            " the",
+            " jacket",
+            " and",
+            " pants",
+            " to",
+            " fit",
+            " your",
+            " body",
+            " perfectly,",
+            " and",
+            " can",
+            " also",
+            " make",
+            " adjustments",
+            " to",
+            " the",
+            " sleeves,",
+            " collar,",
+            " and",
+            " pant",
+            " legs.\n\nBy",
+            " following",
+            " these",
+            " tips,",
+            " you",
+            " can",
+            " have",
+            " a",
+            " tailored",
+            " men's",
+            " suit",
+            " that",
+            " looks",
+            " fashionable",
+            " and",
+            " stylish,",
+            " and",
+            " that",
+            " you",
+            " can",
+            " wear",
+            " with",
+            " confidence.",
+            " Remember",
+            " to",
+            " always",
+            " work",
+            " with",
+            " a",
+            " reputable",
+            " tailor",
+            " who",
+            " can",
+            " help",
+            " you",
+            " achieve",
+            " the",
+            " best",
+            " results."
+        ],
+        "logs": "prompt [INST] <<SYS>>\nYou are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\nIf a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.\n<</SYS>>\nell me how to tailor a men's suit so I look fashionable. [/INST]",
+        "error": null,
+        "metrics": {
+            "predict_time": 18.364308,
+            "total_time": 18.326084
+        },
+        "created_at": "2023-07-22T00:57:53.459888Z",
+        "started_at": "2023-07-22T00:57:53.421664Z",
+        "completed_at": "2023-07-22T00:58:11.785972Z",
+        "urls": {
+            "get": "https://api.replicate.com/v1/predictions/7xhvtyjbutohmf2ia5k2men57y",
+            "cancel": "https://api.replicate.com/v1/predictions/7xhvtyjbutohmf2ia5k2men57y/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "13c3cdee13ee059ab779f0291d29054dab00a47dad8261375654de5540165fb0",
+        "created_at": "2023-11-02T00:33:43.112349+00:00",
+        "cog_version": "0.8.6",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "required": [
+                            "prompt"
+                        ],
+                        "properties": {
+                            "seed": {
+                                "type": "integer",
+                                "title": "Seed",
+                                "x-order": 9,
+                                "description": "Random seed. Leave blank to randomize the seed"
+                            },
+                            "debug": {
+                                "type": "boolean",
+                                "title": "Debug",
+                                "default": false,
+                                "x-order": 10,
+                                "description": "provide debugging output in logs"
+                            },
+                            "top_k": {
+                                "type": "integer",
+                                "title": "Top K",
+                                "default": -1,
+                                "minimum": -1.0,
+                                "x-order": 6,
+                                "description": "When decoding text, samples from the top k most likely tokens; lower to ignore less likely tokens"
+                            },
+                            "top_p": {
+                                "type": "number",
+                                "title": "Top P",
+                                "default": 0.95,
+                                "maximum": 1.0,
+                                "minimum": 0.0,
+                                "x-order": 5,
+                                "description": "When decoding text, samples from the top p percentage of most likely tokens; lower to ignore less likely tokens"
+                            },
+                            "prompt": {
+                                "type": "string",
+                                "title": "Prompt",
+                                "x-order": 0,
+                                "description": "Prompt to send to the model."
+                            },
+                            "temperature": {
+                                "type": "number",
+                                "title": "Temperature",
+                                "default": 0.7,
+                                "maximum": 5.0,
+                                "minimum": 0.01,
+                                "x-order": 4,
+                                "description": "Adjusts randomness of outputs, greater than 1 is random and 0 is deterministic, 0.75 is a good starting value."
+                            },
+                            "system_prompt": {
+                                "type": "string",
+                                "title": "System Prompt",
+                                "default": "You are a helpful, respectful and honest assistant.",
+                                "x-order": 1,
+                                "description": "System prompt to send to the model. This is prepended to the prompt and helps guide system behavior."
+                            },
+                            "max_new_tokens": {
+                                "type": "integer",
+                                "title": "Max New Tokens",
+                                "default": 128,
+                                "minimum": 1.0,
+                                "x-order": 2,
+                                "description": "Maximum number of tokens to generate. A word is generally 2-3 tokens"
+                            },
+                            "min_new_tokens": {
+                                "type": "integer",
+                                "title": "Min New Tokens",
+                                "default": -1,
+                                "minimum": -1.0,
+                                "x-order": 3,
+                                "description": "Minimum number of tokens to generate. To disable, set to -1. A word is generally 2-3 tokens."
+                            },
+                            "stop_sequences": {
+                                "type": "string",
+                                "title": "Stop Sequences",
+                                "x-order": 8,
+                                "description": "A comma-separated list of sequences to stop generation at. For example, '<end>,<stop>' will stop generation at the first instance of 'end' or '<stop>'."
+                            },
+                            "replicate_weights": {
+                                "type": "string",
+                                "title": "Replicate Weights",
+                                "x-order": 11,
+                                "description": "Path to fine-tuned weights produced by a Replicate fine-tune job."
+                            },
+                            "repetition_penalty": {
+                                "type": "number",
+                                "title": "Repetition Penalty",
+                                "default": 1.15,
+                                "minimum": 0.0,
+                                "x-order": 7,
+                                "description": "A parameter that controls how repetitive text can be. Lower means more repetitive, while higher means less repetitive. Set to 1.0 to disable."
+                            }
+                        }
+                    },
+                    "Output": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Output",
+                        "x-cog-array-type": "iterator",
+                        "x-cog-array-display": "concatenate"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

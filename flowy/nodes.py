@@ -4,7 +4,7 @@ import logging
 from .types import STRING
 from .api_key_manager import save_api_key
 
-# Set up logging
+# 设置日志
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -19,10 +19,20 @@ from .nodes_omost import (
 from .nodes_json import FlowyPreviewJSON, FlowyExtractJSON, ComflowyLoadJSON
 from .nodes_http import FlowyHttpRequest
 from .nodes_llm import FlowyLLM
-from .nodes_clarityupscale import FlowyClarityUpscale
-from .nodes_flux import FlowyFlux
-from .nodes_ideogram import FlowyIdeogram
+from .api_nodes import (
+    FlowyClarityUpscale,
+    FlowyFlux,
+    FlowyFluxProUltra,
+    FlowyFluxDevLora,
+    FlowyHailuo,
+    FlowyIdeogram,
+    FlowyKling,
+    FlowyLuma,
+    FlowyRecraft,
+    REPLICATE_NODE_CLASS_MAPPINGS,
+)
 
+from .nodes_previewvideo import PreviewVideo
 
 API_KEY_FILE = os.path.join(os.path.dirname(__file__), "api_key.json")
 
@@ -73,7 +83,16 @@ NODE_CLASS_MAPPINGS = {
     "Comflowy_Clarity_Upscale": FlowyClarityUpscale,
     "Comflowy_Ideogram": FlowyIdeogram,
     "Comflowy_Flux": FlowyFlux,
+    "Comflowy_Recraft": FlowyRecraft,
+    "Comflowy_Hailuo": FlowyHailuo,
+    "Comflowy_Preview_Video": PreviewVideo,
+    "Comflowy_Luma": FlowyLuma,
+    "Comflowy_Kling": FlowyKling,
+    "Comflowy_Flux_Pro_Ultra": FlowyFluxProUltra,
+    "Comflowy_Flux_Dev_Lora": FlowyFluxDevLora,
+    **REPLICATE_NODE_CLASS_MAPPINGS
 }
+
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Comflowy_Http_Request": "Comflowy Http Request",
@@ -90,4 +109,11 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Comflowy_Clarity_Upscale": "Comflowy Clarity Upscale",
     "Comflowy_Ideogram": "Comflowy Ideogram",
     "Comflowy_Flux": "Comflowy Flux",
+    "Comflowy_Recraft": "Comflowy Recraft",
+    "Comflowy_Hailuo": "Comflowy Hailuo",
+    "Comflowy_Preview_Video": "Comflowy Preview Video",
+    "Comflowy_Luma": "Comflowy Luma",
+    "Comflowy_Kling": "Comflowy Kling",
+    "Comflowy_Flux_Pro_Ultra": "Comflowy Flux Pro Ultra",
+    "Comflowy_Flux_Dev_Lora": "Comflowy Flux Dev Lora",
 }

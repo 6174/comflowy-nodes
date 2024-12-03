@@ -1,0 +1,596 @@
+{
+    "url": "https://replicate.com/lucataco/llama-3-vision-alpha",
+    "owner": "lucataco",
+    "name": "llama-3-vision-alpha",
+    "description": "Projection module trained to add vision capabilties to Llama 3 using SigLIP",
+    "visibility": "public",
+    "github_url": "https://github.com/lucataco/cog-llama-3-vision-alpha",
+    "paper_url": "https://arxiv.org/abs/2304.08485",
+    "license_url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B/blob/main/LICENSE",
+    "run_count": 0,
+    "cover_image_url": "https://replicate.delivery/pbxt/Kq17Ws2RLIXdeFeep2N56psrMVq57TPssPrffeF8HawmOhvD/frieren.jpg",
+    "default_example": {
+        "id": "xr5yqyfvx5rgg0cjzm4903jh9g",
+        "model": "lucataco/llama-3-vision-alpha",
+        "version": "79f9f3418f65fb5d180978a969d5646e33f8ca67430a2fe903c9a4be82565925",
+        "status": "succeeded",
+        "input": {
+            "image": "https://replicate.delivery/pbxt/Kq17Ws2RLIXdeFeep2N56psrMVq57TPssPrffeF8HawmOhvD/frieren.jpg",
+            "prompt": "Describe the image"
+        },
+        "output": [
+            "",
+            "The ",
+            "image ",
+            "is ",
+            "of ",
+            "a ",
+            "young ",
+            "girl ",
+            "with ",
+            "",
+            "short, ",
+            "curly ",
+            "hair ",
+            "and ",
+            "bright ",
+            "blue ",
+            "",
+            "eyes. ",
+            "She ",
+            "has ",
+            "a ",
+            "sweet ",
+            "and ",
+            "cheerful ",
+            "",
+            "face, ",
+            "with ",
+            "a ",
+            "hint ",
+            "of ",
+            "mischief ",
+            "in ",
+            "her ",
+            "",
+            "eyes. ",
+            "She ",
+            "is ",
+            "holding ",
+            "a ",
+            "giant ",
+            "hamburger ",
+            "in ",
+            "her ",
+            "",
+            "hand, ",
+            "with ",
+            "a ",
+            "big ",
+            "bite ",
+            "taken ",
+            "out ",
+            "of ",
+            "",
+            "it. ",
+            "She ",
+            "looks ",
+            "like ",
+            "",
+            "she's ",
+            "enjoying ",
+            "every ",
+            "bite ",
+            "of ",
+            "her ",
+            "",
+            "meal, ",
+            "with ",
+            "a ",
+            "satisfied ",
+            "expression ",
+            "on ",
+            "her ",
+            "",
+            "face. ",
+            "She ",
+            "is ",
+            "sitting ",
+            "at ",
+            "a ",
+            "table ",
+            "in ",
+            "a ",
+            "medieval ",
+            "- ",
+            "style ",
+            "",
+            "tavern, ",
+            "surrounded ",
+            "by ",
+            "wooden ",
+            "tables ",
+            "and ",
+            "",
+            "chairs, ",
+            "with ",
+            "a ",
+            "fireplace ",
+            "",
+            "crackling ",
+            "in ",
+            "the ",
+            "",
+            "background. ",
+            "The ",
+            "atmosphere ",
+            "is ",
+            "cozy ",
+            "and ",
+            "",
+            "inviting, ",
+            "with ",
+            "a ",
+            "warm ",
+            "glow ",
+            "",
+            "emanating ",
+            "from ",
+            "the ",
+            "",
+            "fireplace. ",
+            "The ",
+            "girl ",
+            "looks ",
+            "like ",
+            "",
+            "she's ",
+            "in ",
+            "her ",
+            "",
+            "element, ",
+            "enjoying ",
+            "a ",
+            "hearty ",
+            "meal ",
+            "with ",
+            "friends ",
+            "and ",
+            "",
+            "",
+            "family."
+        ],
+        "logs": null,
+        "error": null,
+        "metrics": {
+            "predict_time": 7.222070288,
+            "total_time": 213.543136
+        },
+        "created_at": "2024-11-05T15:54:37.417000Z",
+        "started_at": "2024-11-05T15:58:03.738066Z",
+        "completed_at": "2024-11-05T15:58:10.960136Z",
+        "urls": {
+            "stream": "https://stream-g.svc.us.c.replicate.net/v1/streams/tyc5fuqsyfaljskuudrin6ii5giamx5prdfpvk6uiqk7vlj7m56q",
+            "get": "https://api.replicate.com/v1/predictions/xr5yqyfvx5rgg0cjzm4903jh9g",
+            "cancel": "https://api.replicate.com/v1/predictions/xr5yqyfvx5rgg0cjzm4903jh9g/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "79f9f3418f65fb5d180978a969d5646e33f8ca67430a2fe903c9a4be82565925",
+        "created_at": "2024-11-05T15:53:22.829736+00:00",
+        "cog_version": "0.12.0",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "required": [
+                            "image"
+                        ],
+                        "properties": {
+                            "image": {
+                                "type": "string",
+                                "title": "Image",
+                                "format": "uri",
+                                "x-order": 0,
+                                "description": "Input image"
+                            },
+                            "prompt": {
+                                "type": "string",
+                                "title": "Prompt",
+                                "default": "Describe the image",
+                                "x-order": 1,
+                                "description": "Input prompt"
+                            }
+                        }
+                    },
+                    "Output": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Output",
+                        "x-cog-array-type": "iterator",
+                        "x-cog-array-display": "concatenate"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

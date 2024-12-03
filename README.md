@@ -35,7 +35,7 @@ When using ComfyUI, most of the models we use are open-source models. Some close
       
       ![image](images/Omost_LLM.png)
     </details>
-3. **Comflowy Flux Node:** Flux is a node that can generate images with Flux Pro. Flux Pro is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
+3. **Comflowy Flux Pro Node:** Flux is a node that can generate images with Flux Pro. Flux Pro is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
    * Online version [App](https://app.comflowy.com/app/app-general-image-by-flux-153b).
    * <details>
       <summary>Workflow Screenshot</summary>
@@ -43,7 +43,9 @@ When using ComfyUI, most of the models we use are open-source models. Some close
 
       ![image](images/flux.png)
     </details>
-4. **Comflowy Ideogram Node:** Ideogram is a node that can generate images with Ideogram. Similar to Flux, Ideogram is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
+4. **Comflowy Flux Pro Ultra Node:** Flux Pro Ultra is the latest high-definition model released by Flux. You can also set the Raw parameter to True, so that the output images will be more realistic and detailed.
+5. **Comflowy Flux Dev Lora Node:** Flux Dev Lora node is a node that allows you to load any Flux LoRA. You only need to fill in the download address of the Flux LoRA model into the node to load and use it.
+6. **Comflowy Ideogram Node:** Ideogram is a node that can generate images with Ideogram. Similar to Flux, Ideogram is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits.
    * Online version [App](https://app.comflowy.com/app/app-general-image-by-ideogram-b453).
    * <details>
       <summary>Workflow Screenshot</summary>
@@ -51,7 +53,8 @@ When using ComfyUI, most of the models we use are open-source models. Some close
 
       ![image](images/ideogram.png)
     </details>
-5. **Comflowy Clarity Upscale Node:** This is a node that can upscale images. This node is claimed to be a replacement for Magnific. The overseas influencer developer [levlsio](https://twitter.com/levelsio/status/1827404021684170902) praised this model.
+7. **Comflowy Recraft Node:** Similar to Flux, Recraft is a non open source model, so in most cases, you cannot use this model in ComfyUI. To solve this problem, we developed this node, which allows you to generate images directly in ComfyUI. But please note that this model is a commercial model, so each use will deduct your credits. This model is similar to Ideogram, and is very suitable for generating images with text.
+8. **Comflowy Clarity Upscale Node:** This is a node that can upscale images. This node is claimed to be a replacement for Magnific. The overseas influencer developer [levlsio](https://twitter.com/levelsio/status/1827404021684170902) praised this model.
    * Online version [App](https://app.comflowy.com/app/app-clarity-upscale-4257).
    * <details>
       <summary>Workflow Screenshot</summary>
@@ -59,6 +62,10 @@ When using ComfyUI, most of the models we use are open-source models. Some close
 
       ![image](images/clarity.png)
     </details>
+9. **Comflowy Replicate Node:** Thanks to [Replicate](https://github.com/replicate/comfyui-replicate) for providing services and code, now you can use the models in Replicate.
+10. **Comflowy Hailuo Video Node:** This node uses the Hailuo AI model, which can convert images to videos. Note that this node requires the Comflowy Preview Video node to be used.
+11. **Comflowy Kling Image Node:** This node uses the Kling AI model, which can convert images to videos. Note that this node requires the Comflowy Preview Video node to be used.
+
 
 ## II. Price
 
@@ -66,9 +73,15 @@ When using ComfyUI, most of the models we use are open-source models. Some close
 | --- | --- |
 | LLM | Free |
 | Omost | Free |
-| Flux | Flux-1.1-pro costs approximately 400 credit per image. Flux-pro costs 550 credits per image. |
+| Flux Pro | Flux-1.1-pro costs approximately 400 credit per image. Flux-pro costs 550 credits per image. |
+| Flux Pro Ultra | 600 credits per image. |
+| Flux Dev Lora | 350 credits per image. |
 | Ideogram | Ideogram-v2-turbo costs approximately 800 credit per image. Ideogram-v2 costs 500 credits per image. |
-| Clarity Upscale | This model costs approximately 500 credits per image, but this varies depending on your inputs. | 
+| Recraft | This model costs approximately 400～800 credits per image, depending on your inputs. |
+| Replicate | This depends on the model you use and the time consumed. |
+| Hailuo | This costs approximately 5000 credits per video. |
+| Kling | This costs credits based on the length of the video. |
+
 ## III. How to Use
 
 > [!NOTE]

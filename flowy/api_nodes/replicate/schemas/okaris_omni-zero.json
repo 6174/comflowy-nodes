@@ -1,0 +1,620 @@
+{
+    "url": "https://replicate.com/okaris/omni-zero",
+    "owner": "okaris",
+    "name": "omni-zero",
+    "description": "Omni-Zero: A diffusion pipeline for zero-shot stylized portrait creation.",
+    "visibility": "public",
+    "github_url": "https://github.com/okaris/omni-zero",
+    "paper_url": null,
+    "license_url": "https://github.com/okaris/omni-zero/blob/main/LICENSE",
+    "run_count": 0,
+    "cover_image_url": "https://tjzk.replicate.delivery/models_models_cover_image/fc1e5088-3e85-4577-965a-a36733adda00/325679040-2c51fb77-a810-4c0a-9555.png",
+    "default_example": {
+        "id": "p28rjd4ws9rgm0cg4rbr23fhdm",
+        "model": "okaris/omni-zero",
+        "version": "63ae60eb91f6d09acc0ec5bb9892b330e63150cc50ee87d48e93ad73d25291f6",
+        "status": "succeeded",
+        "input": {
+            "seed": 42,
+            "prompt": "A person",
+            "base_image": "https://github.com/okaris/omni-zero/assets/1448702/2ca63443-c7f3-4ba6-95c1-2a341414865f",
+            "style_image": "https://github.com/okaris/omni-zero/assets/1448702/64dc150b-f683-41b1-be23-b6a52c771584",
+            "guidance_scale": 3,
+            "identity_image": "https://github.com/okaris/omni-zero/assets/1448702/ba193a3a-f90e-4461-848a-560454531c58",
+            "negative_prompt": "blurry, out of focus",
+            "number_of_steps": 10,
+            "number_of_images": 1,
+            "composition_image": "https://github.com/okaris/omni-zero/assets/1448702/2ca63443-c7f3-4ba6-95c1-2a341414865f",
+            "base_image_strength": 0.15,
+            "depth_image_strength": 0.5,
+            "style_image_strength": 1,
+            "identity_image_strength": 1,
+            "composition_image_strength": 1
+        },
+        "output": [
+            "https://replicate.delivery/pbxt/MEDNlRywhva7O9sO5P439PTbhZ5qHJZfd7eqVPCITJlXkdflA/oz_output_0.jpg"
+        ],
+        "logs": "/root/.pyenv/versions/3.11.9/lib/python3.11/site-packages/insightface/utils/transform.py:68: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.\nTo use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.\nP = np.linalg.lstsq(X_homo, Y)[0].T # Affine matrix. 3 x 4\n  0%|          | 0/10 [00:00<?, ?it/s]/root/.pyenv/versions/3.11.9/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:608: UserWarning: Should have tb<=t1 but got tb=6.818950160602679 and t1=6.81895.\nwarnings.warn(f\"Should have {tb_name}<=t1 but got {tb_name}={tb} and t1={self._end}.\")\n 10%|█         | 1/10 [00:00<00:02,  3.90it/s]\n 20%|██        | 2/10 [00:00<00:01,  4.58it/s]\n 30%|███       | 3/10 [00:00<00:01,  4.52it/s]\n 40%|████      | 4/10 [00:00<00:01,  4.55it/s]\n 50%|█████     | 5/10 [00:01<00:01,  4.53it/s]\n 60%|██████    | 6/10 [00:01<00:00,  4.50it/s]\n 70%|███████   | 7/10 [00:01<00:00,  4.54it/s]\n 80%|████████  | 8/10 [00:01<00:00,  4.54it/s]/root/.pyenv/versions/3.11.9/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:599: UserWarning: Should have ta>=t0 but got ta=0.09863785005758784 and t0=0.098638.\nwarnings.warn(f\"Should have ta>=t0 but got ta={ta} and t0={self._start}.\")\n 90%|█████████ | 9/10 [00:01<00:00,  4.53it/s]/root/.pyenv/versions/3.11.9/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:599: UserWarning: Should have ta>=t0 but got ta=0.0 and t0=0.098638.\nwarnings.warn(f\"Should have ta>=t0 but got ta={ta} and t0={self._start}.\")\n/root/.pyenv/versions/3.11.9/lib/python3.11/site-packages/torchsde/_brownian/brownian_interval.py:602: UserWarning: Should have tb>=t0 but got tb=0.09863785005758784 and t0=0.098638.\nwarnings.warn(f\"Should have {tb_name}>=t0 but got {tb_name}={tb} and t0={self._start}.\")\n100%|██████████| 10/10 [00:02<00:00,  4.54it/s]\n100%|██████████| 10/10 [00:02<00:00,  4.51it/s]",
+        "error": null,
+        "metrics": {
+            "predict_time": 7.063468107,
+            "total_time": 71.939887
+        },
+        "created_at": "2024-06-17T12:06:40.074000Z",
+        "started_at": "2024-06-17T12:07:44.950419Z",
+        "completed_at": "2024-06-17T12:07:52.013887Z",
+        "urls": {
+            "get": "https://api.replicate.com/v1/predictions/p28rjd4ws9rgm0cg4rbr23fhdm",
+            "cancel": "https://api.replicate.com/v1/predictions/p28rjd4ws9rgm0cg4rbr23fhdm/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "036947f1e1961875eef47a561293978528bf3a847e79fedb20600c9ad25d0c59",
+        "created_at": "2024-08-21T16:47:22.776589+00:00",
+        "cog_version": "0.10.0-alpha20",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/ready": {
+                    "get": {
+                        "summary": "Ready",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Ready Ready Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "ready_ready_get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "required": [
+                            "style_image",
+                            "identity_image"
+                        ],
+                        "properties": {
+                            "seed": {
+                                "type": "integer",
+                                "title": "Seed",
+                                "default": 42,
+                                "x-order": 0,
+                                "description": "Random seed for the model"
+                            },
+                            "image": {
+                                "type": "string",
+                                "title": "Image",
+                                "format": "uri",
+                                "x-order": 7,
+                                "description": "Base image for the model"
+                            },
+                            "model": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/model"
+                                    }
+                                ],
+                                "default": "omni-zero",
+                                "x-order": 1,
+                                "description": "Model to use for the prediction"
+                            },
+                            "prompt": {
+                                "type": "string",
+                                "title": "Prompt",
+                                "default": "A person",
+                                "x-order": 2,
+                                "description": "Prompt for the model"
+                            },
+                            "depth_image": {
+                                "type": "string",
+                                "title": "Depth Image",
+                                "format": "uri",
+                                "x-order": 15,
+                                "description": "Depth image for the model"
+                            },
+                            "style_image": {
+                                "type": "string",
+                                "title": "Style Image",
+                                "format": "uri",
+                                "x-order": 11,
+                                "description": "Style image for the model"
+                            },
+                            "depth_strength": {
+                                "type": "number",
+                                "title": "Depth Strength",
+                                "default": 0.5,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 16,
+                                "description": "Depth image strength for the model, if not supplied the composition image will be used for depth"
+                            },
+                            "guidance_scale": {
+                                "type": "number",
+                                "title": "Guidance Scale",
+                                "default": 3,
+                                "maximum": 14,
+                                "minimum": 0,
+                                "x-order": 4,
+                                "description": "Guidance scale for the model"
+                            },
+                            "identity_image": {
+                                "type": "string",
+                                "title": "Identity Image",
+                                "format": "uri",
+                                "x-order": 13,
+                                "description": "Identity image for the model"
+                            },
+                            "image_strength": {
+                                "type": "number",
+                                "title": "Image Strength",
+                                "default": 0.15,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 8,
+                                "description": "Base image strength for the model"
+                            },
+                            "style_strength": {
+                                "type": "number",
+                                "title": "Style Strength",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 12,
+                                "description": "Style image strength for the model"
+                            },
+                            "negative_prompt": {
+                                "type": "string",
+                                "title": "Negative Prompt",
+                                "default": "blurry, out of focus",
+                                "x-order": 3,
+                                "description": "Negative prompt for the model"
+                            },
+                            "number_of_steps": {
+                                "type": "integer",
+                                "title": "Number Of Steps",
+                                "default": 10,
+                                "maximum": 50,
+                                "minimum": 1,
+                                "x-order": 6,
+                                "description": "Number of steps for the model"
+                            },
+                            "number_of_images": {
+                                "type": "integer",
+                                "title": "Number Of Images",
+                                "default": 1,
+                                "maximum": 4,
+                                "minimum": 1,
+                                "x-order": 5,
+                                "description": "Number of images to generate"
+                            },
+                            "composition_image": {
+                                "type": "string",
+                                "title": "Composition Image",
+                                "format": "uri",
+                                "x-order": 9,
+                                "description": "Composition image for the model"
+                            },
+                            "identity_strength": {
+                                "type": "number",
+                                "title": "Identity Strength",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 14,
+                                "description": "Identity image strength for the model"
+                            },
+                            "composition_strength": {
+                                "type": "number",
+                                "title": "Composition Strength",
+                                "default": 1,
+                                "maximum": 1,
+                                "minimum": 0,
+                                "x-order": 10,
+                                "description": "Composition image strength for the model"
+                            }
+                        }
+                    },
+                    "model": {
+                        "enum": [
+                            "omni-zero",
+                            "omni-zero-realism"
+                        ],
+                        "type": "string",
+                        "title": "model",
+                        "description": "An enumeration."
+                    },
+                    "Output": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "title": "Output"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
