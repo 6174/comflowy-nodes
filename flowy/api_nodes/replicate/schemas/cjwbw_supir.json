@@ -1,0 +1,613 @@
+{
+    "url": "https://replicate.com/cjwbw/supir",
+    "owner": "cjwbw",
+    "name": "supir",
+    "description": "Practicing Model Scaling for Photo-Realistic Image Restoration In the Wild. This version uses LLaVA-13b for captioning.",
+    "visibility": "public",
+    "github_url": "https://github.com/chenxwh/SUPIR",
+    "paper_url": "https://github.com/chenxwh/SUPIR/tree/master",
+    "license_url": "https://github.com/Fanghua-Yu/SUPIR/blob/master/LICENSE",
+    "run_count": 0,
+    "cover_image_url": "https://replicate.delivery/pbxt/tsZTAUpHvDorAJcaZDd1BpYsBcijNfwhXfDUCAIvrqTsdnZSA/out.png",
+    "default_example": {
+        "id": "o4b2mqtbpcxyuo52addzll2g6i",
+        "model": "cjwbw/supir",
+        "version": "1302b550b4f7681da87ed0e405016d443fe1fafd64dabce6673401855a5039b5",
+        "status": "succeeded",
+        "input": {
+            "image": "https://replicate.delivery/pbxt/KSFJ6sJWyEiPWysywNsAr2enzigJA3NZpG4YMrxrSFEIEShi/05.png",
+            "s_cfg": 7.5,
+            "s_churn": 5,
+            "s_noise": 1.003,
+            "upscale": 1,
+            "a_prompt": "Cinematic, High Contrast, highly detailed, taken using a Canon EOS R camera, hyper detailed photo - realistic maximum detail, 32k, Color Grading, ultra HD, extreme meticulous detailing, skin pore detailing, hyper sharpness, perfect without deformations.",
+            "min_size": 1024,
+            "n_prompt": "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth",
+            "s_stage1": -1,
+            "s_stage2": 1,
+            "edm_steps": 50,
+            "use_llava": true,
+            "linear_CFG": false,
+            "model_name": "SUPIR-v0Q",
+            "color_fix_type": "Wavelet",
+            "spt_linear_CFG": 1,
+            "linear_s_stage2": false,
+            "spt_linear_s_stage2": 0
+        },
+        "output": "https://replicate.delivery/pbxt/tsZTAUpHvDorAJcaZDd1BpYsBcijNfwhXfDUCAIvrqTsdnZSA/out.png",
+        "logs": "Using seed: 12774\nCaptions from LLaVA: ['The image features a beautiful bird perched on a thin, dry branch in a field. The bird is colorful and stands out against the brown background of the field. The branch is located in the middle of the scene, with the bird sitting on it, drawing attention to itself. The field is filled with a variety of flowers, adding a vibrant touch to the scene. The overall style of the image is artistic, with a focus on the bird and its natural surroundings.']\nSeed set to 12774",
+        "error": null,
+        "metrics": {
+            "predict_time": 18.567178,
+            "total_time": 859.898094
+        },
+        "created_at": "2024-02-23T16:04:32.875679Z",
+        "started_at": "2024-02-23T16:18:34.206595Z",
+        "completed_at": "2024-02-23T16:18:52.773773Z",
+        "urls": {
+            "get": "https://api.replicate.com/v1/predictions/o4b2mqtbpcxyuo52addzll2g6i",
+            "cancel": "https://api.replicate.com/v1/predictions/o4b2mqtbpcxyuo52addzll2g6i/cancel"
+        }
+    },
+    "latest_version": {
+        "id": "1302b550b4f7681da87ed0e405016d443fe1fafd64dabce6673401855a5039b5",
+        "created_at": "2024-02-23T16:02:47.711057+00:00",
+        "cog_version": "0.9.4",
+        "openapi_schema": {
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/": {
+                    "get": {
+                        "summary": "Root",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "root__get"
+                    }
+                },
+                "/shutdown": {
+                    "post": {
+                        "summary": "Start Shutdown",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Start Shutdown Shutdown Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "start_shutdown_shutdown_post"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "summary": "Predict",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/PredictionRequest"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/health-check": {
+                    "get": {
+                        "summary": "Healthcheck",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Healthcheck Health Check Get"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "operationId": "healthcheck_health_check_get"
+                    }
+                },
+                "/predictions/{prediction_id}": {
+                    "put": {
+                        "summary": "Predict Idempotent",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/PredictionResponse"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            },
+                            {
+                                "in": "header",
+                                "name": "prefer",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prefer"
+                                },
+                                "required": false
+                            }
+                        ],
+                        "description": "Run a single prediction on the model (idempotent creation).",
+                        "operationId": "predict_idempotent_predictions__prediction_id__put",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PredictionRequest"
+                                            }
+                                        ],
+                                        "title": "Prediction Request"
+                                    }
+                                }
+                            },
+                            "required": true
+                        }
+                    }
+                },
+                "/predictions/{prediction_id}/cancel": {
+                    "post": {
+                        "summary": "Cancel",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "title": "Response Cancel Predictions  Prediction Id  Cancel Post"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "in": "path",
+                                "name": "prediction_id",
+                                "schema": {
+                                    "type": "string",
+                                    "title": "Prediction ID"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "description": "Cancel a running prediction",
+                        "operationId": "cancel_predictions__prediction_id__cancel_post"
+                    }
+                }
+            },
+            "openapi": "3.0.2",
+            "components": {
+                "schemas": {
+                    "Input": {
+                        "type": "object",
+                        "title": "Input",
+                        "required": [
+                            "image"
+                        ],
+                        "properties": {
+                            "seed": {
+                                "type": "integer",
+                                "title": "Seed",
+                                "x-order": 18,
+                                "description": "Random seed. Leave blank to randomize the seed"
+                            },
+                            "image": {
+                                "type": "string",
+                                "title": "Image",
+                                "format": "uri",
+                                "x-order": 1,
+                                "description": "Low quality input image."
+                            },
+                            "s_cfg": {
+                                "type": "number",
+                                "title": "S Cfg",
+                                "default": 7.5,
+                                "maximum": 20,
+                                "minimum": 1,
+                                "x-order": 12,
+                                "description": " Classifier-free guidance scale for prompts."
+                            },
+                            "s_churn": {
+                                "type": "number",
+                                "title": "S Churn",
+                                "default": 5,
+                                "x-order": 10,
+                                "description": "Original churn hy-param of EDM."
+                            },
+                            "s_noise": {
+                                "type": "number",
+                                "title": "S Noise",
+                                "default": 1.003,
+                                "x-order": 11,
+                                "description": "Original noise hy-param of EDM."
+                            },
+                            "upscale": {
+                                "type": "integer",
+                                "title": "Upscale",
+                                "default": 1,
+                                "x-order": 2,
+                                "description": "Upsampling ratio of given inputs."
+                            },
+                            "a_prompt": {
+                                "type": "string",
+                                "title": "A Prompt",
+                                "default": "Cinematic, High Contrast, highly detailed, taken using a Canon EOS R camera, hyper detailed photo - realistic maximum detail, 32k, Color Grading, ultra HD, extreme meticulous detailing, skin pore detailing, hyper sharpness, perfect without deformations.",
+                                "x-order": 6,
+                                "description": "Additive positive prompt for the inputs."
+                            },
+                            "min_size": {
+                                "type": "number",
+                                "title": "Min Size",
+                                "default": 1024,
+                                "x-order": 3,
+                                "description": "Minimum resolution of output images."
+                            },
+                            "n_prompt": {
+                                "type": "string",
+                                "title": "N Prompt",
+                                "default": "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth",
+                                "x-order": 7,
+                                "description": "Negative prompt for the inputs."
+                            },
+                            "s_stage1": {
+                                "type": "integer",
+                                "title": "S Stage1",
+                                "default": -1,
+                                "x-order": 9,
+                                "description": "Control Strength of Stage1 (negative means invalid)."
+                            },
+                            "s_stage2": {
+                                "type": "number",
+                                "title": "S Stage2",
+                                "default": 1,
+                                "x-order": 13,
+                                "description": "Control Strength of Stage2."
+                            },
+                            "edm_steps": {
+                                "type": "integer",
+                                "title": "Edm Steps",
+                                "default": 50,
+                                "maximum": 500,
+                                "minimum": 1,
+                                "x-order": 4,
+                                "description": "Number of steps for EDM Sampling Schedule."
+                            },
+                            "use_llava": {
+                                "type": "boolean",
+                                "title": "Use Llava",
+                                "default": true,
+                                "x-order": 5,
+                                "description": "Use LLaVA model to get captions."
+                            },
+                            "linear_CFG": {
+                                "type": "boolean",
+                                "title": "Linear Cfg",
+                                "default": false,
+                                "x-order": 14,
+                                "description": "Linearly (with sigma) increase CFG from 'spt_linear_CFG' to s_cfg."
+                            },
+                            "model_name": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/model_name"
+                                    }
+                                ],
+                                "default": "SUPIR-v0Q",
+                                "x-order": 0,
+                                "description": "Choose a model. SUPIR-v0Q is the default training settings with paper. SUPIR-v0F is high generalization and high image quality in most cases. Training with light degradation settings. Stage1 encoder of SUPIR-v0F remains more details when facing light degradations."
+                            },
+                            "color_fix_type": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/color_fix_type"
+                                    }
+                                ],
+                                "default": "Wavelet",
+                                "x-order": 8,
+                                "description": "Color Fixing Type.."
+                            },
+                            "spt_linear_CFG": {
+                                "type": "number",
+                                "title": "Spt Linear Cfg",
+                                "default": 1,
+                                "x-order": 16,
+                                "description": "Start point of linearly increasing CFG."
+                            },
+                            "linear_s_stage2": {
+                                "type": "boolean",
+                                "title": "Linear S Stage2",
+                                "default": false,
+                                "x-order": 15,
+                                "description": "Linearly (with sigma) increase s_stage2 from 'spt_linear_s_stage2' to s_stage2."
+                            },
+                            "spt_linear_s_stage2": {
+                                "type": "number",
+                                "title": "Spt Linear S Stage2",
+                                "default": 0,
+                                "x-order": 17,
+                                "description": "Start point of linearly increasing s_stage2."
+                            }
+                        }
+                    },
+                    "Output": {
+                        "type": "string",
+                        "title": "Output",
+                        "format": "uri"
+                    },
+                    "Status": {
+                        "enum": [
+                            "starting",
+                            "processing",
+                            "succeeded",
+                            "canceled",
+                            "failed"
+                        ],
+                        "type": "string",
+                        "title": "Status",
+                        "description": "An enumeration."
+                    },
+                    "model_name": {
+                        "enum": [
+                            "SUPIR-v0Q",
+                            "SUPIR-v0F"
+                        ],
+                        "type": "string",
+                        "title": "model_name",
+                        "description": "An enumeration."
+                    },
+                    "WebhookEvent": {
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "type": "string",
+                        "title": "WebhookEvent",
+                        "description": "An enumeration."
+                    },
+                    "color_fix_type": {
+                        "enum": [
+                            "None",
+                            "AdaIn",
+                            "Wavelet"
+                        ],
+                        "type": "string",
+                        "title": "color_fix_type",
+                        "description": "An enumeration."
+                    },
+                    "ValidationError": {
+                        "type": "object",
+                        "title": "ValidationError",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "properties": {
+                            "loc": {
+                                "type": "array",
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        }
+                    },
+                    "PredictionRequest": {
+                        "type": "object",
+                        "title": "PredictionRequest",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "webhook": {
+                                "type": "string",
+                                "title": "Webhook",
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "output_file_prefix": {
+                                "type": "string",
+                                "title": "Output File Prefix"
+                            },
+                            "webhook_events_filter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "default": [
+                                    "start",
+                                    "output",
+                                    "logs",
+                                    "completed"
+                                ]
+                            }
+                        }
+                    },
+                    "PredictionResponse": {
+                        "type": "object",
+                        "title": "PredictionResponse",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "Id"
+                            },
+                            "logs": {
+                                "type": "string",
+                                "title": "Logs",
+                                "default": ""
+                            },
+                            "error": {
+                                "type": "string",
+                                "title": "Error"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            },
+                            "metrics": {
+                                "type": "object",
+                                "title": "Metrics"
+                            },
+                            "version": {
+                                "type": "string",
+                                "title": "Version"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "title": "Created At",
+                                "format": "date-time"
+                            },
+                            "started_at": {
+                                "type": "string",
+                                "title": "Started At",
+                                "format": "date-time"
+                            },
+                            "completed_at": {
+                                "type": "string",
+                                "title": "Completed At",
+                                "format": "date-time"
+                            }
+                        }
+                    },
+                    "HTTPValidationError": {
+                        "type": "object",
+                        "title": "HTTPValidationError",
+                        "properties": {
+                            "detail": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,35 +2,59 @@ import json
 import sys
 import os
 
-API_HOST = "https://app.comflowy.com"
+API_HOST = "https://app.comflowy.com" 
 # API_HOST = "http://127.0.0.1:3000" 
+PPT_TOKEN = ""
+RUN_ID = ""
+ENV = "pro"
+# ENV = "preview"
 
-custom_node_api_config_inited = False
+def _read_config():
+    try:
+        # 首先尝试从线程上下文获取
+        thread_context_module = sys.modules.get("flowy_execute_thread_context")
+        if thread_context_module and hasattr(thread_context_module, "get_run_context"):
+            options = thread_context_module.get_run_context("options")
+            if options:
+                print("get_run_context", options.get("custom_node_api_config", {}))
+                return options.get("custom_node_api_config", {})
+    except Exception as e:
+        print(f"Error getting context from thread: {e}")
 
-def init_custom_node_api_config_from_file():
-    global API_HOST, PPT_TOKEN, RUN_ID, custom_node_api_config_inited
-    config_path = "/comfyui/custom_node_api_config.json"
-    
-    if os.path.exists(config_path):
-        try:
+    # 回退到文件读取
+    try:
+        config_path = "/comfyui/custom_node_api_config.json"
+        if os.path.exists(config_path):
             with open(config_path, "r") as f:
-                config = json.load(f)
-                API_HOST = config.get("domain", API_HOST)
-                PPT_TOKEN = config.get("ppt_token", PPT_TOKEN)
-                RUN_ID = config.get("run_id", RUN_ID)
-            custom_node_api_config_inited = True
-            print(f"Custom node API config initialized: API_HOST={API_HOST}, PPT_TOKEN={PPT_TOKEN}, RUN_ID={RUN_ID}")
-        except Exception as e:
-            print(f"Error reading custom node api config: {e}")
-    else:
-        print("Custom node API config file not found. Using default values.")
+                ret = json.load(f)
+                print("read_config", ret)
+                return ret
+    except Exception as e:
+        print(f"Error reading custom node api config file: {e}")
 
-init_custom_node_api_config_from_file()
+    # 如果都失败了，返回空字典
+    return {}
+
 
 def get_api_host():
-    if not custom_node_api_config_inited:
-        init_custom_node_api_config_from_file()
-    return API_HOST
+    config = _read_config()
+    return config.get("domain", API_HOST)
+
+def get_modal_cloud_web_url():
+    config = _read_config()
+    env = config.get("env", ENV)
+    if env == "dev":
+        return "https://comflowy--cloud-web-dev.modal.run"
+    else:
+        return "https://comflowy--comflowyspacecloud-web-main.modal.run"
+
+def get_ppt_token():
+    config = _read_config()
+    return config.get("ppt_token", PPT_TOKEN)
+
+def get_run_id():
+    config = _read_config()
+    return config.get("run_id", RUN_ID)
 
 FLOAT = (
     "FLOAT",
@@ -68,7 +92,11 @@ LLM_MODELS = [
   "internlm/internlm2_5-7b-chat"
 ]
 
-SAFETY_TOLERANCE = ["1", "2", "3", "4", "5"]
+SAFETY_TOLERANCE = ["1", "2", "3", "4", "5", "6"]
+
+NUM_IMAGES = ["1", "2", "3", "4"]
+
+OUTPUT_FORMAT = ["jpeg", "png"]
 
 class AnyType(str):
     """A special class that is always equal in not equal comparisons. Credit to pythongosssss"""
@@ -80,4 +108,3 @@ class AnyType(str):
         return False
 
 any = AnyType("*")
-
